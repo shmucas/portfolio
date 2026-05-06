@@ -19,7 +19,7 @@ export default function About() {
           <div className="grid md:grid-cols-5 gap-12 items-start">
             <div className="md:col-span-3 space-y-4">
               <p className="text-slate-300 text-lg leading-relaxed font-light">
-                Civil engineer turned signal optimization engineer, working at the intersection of
+                Signal optimization engineer at NoTraffic working at the intersection of
                 transportation infrastructure and software for over five years.
               </p>
               <p className="text-slate-400 leading-relaxed">
