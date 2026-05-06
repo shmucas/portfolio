@@ -93,8 +93,6 @@ const accentMap = {
 }
 
 export default function Projects() {
-  const ref = useScrollFade()
-
   return (
     <section id="projects" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
