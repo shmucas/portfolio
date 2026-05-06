@@ -2,7 +2,7 @@ import { useScrollFade } from '../hooks/useScrollFade'
 
 const stats = [
   { value: '5+', label: 'Years in Traffic Engineering' },
-  { value: '60+', label: 'Intersections Managed' },
+  { value: '72+', label: 'Intersections Managed' },
   { value: '30%', label: 'Delay Reduction Achieved' },
   { value: 'GT', label: 'Georgia Tech, B.S. Civil Eng.' },
 ]
@@ -24,8 +24,8 @@ export default function About() {
               </p>
               <p className="text-slate-400 leading-relaxed">
                 Currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>,
-                where I lead deployment of adaptive signal control algorithms across major
-                municipalities — Phoenix, Topeka, Missouri City, Naples, and Montreal. I manage 60+
+                where I lead deployment of NoTraffic Optimization algorithms across major
+                municipalities — Phoenix, Topeka, Missouri City, Naples, West Allis, and Montreal. I manage 72+
                 signalized intersections nationwide, serve as the primary liaison between the R&D
                 team in Israel and U.S. field operations, and translate traffic engineering
                 requirements into actionable product improvements.
@@ -39,8 +39,8 @@ export default function About() {
                 studies, ITS design, and signal plan development.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                On the software side, I build internal tooling — file parsers, validation engines,
-                policy generators, and automation scripts — to support controller configuration,
+                On the software side, I build internal tooling used by my coworkers and myself. Those are typically file parsers, validation engines,
+                policy generators, and automation scripts. These go hand in hand with
                 optimization workflows, and deployment pipelines. I work primarily in Python with
                 PostgreSQL, Linux, and Azure infrastructure.
               </p>
