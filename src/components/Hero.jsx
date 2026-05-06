@@ -105,16 +105,7 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Scroll indicator */}
-        <div
-          className="animate-fade-in absolute bottom-10 left-6 flex flex-col items-center gap-2 opacity-30"
-          style={{ animationDelay: '800ms' }}
-        >
-          <span className="font-mono text-[10px] tracking-widest uppercase text-slate-500 rotate-90 origin-center translate-x-3">
-           
-          </span>
-          <div className="w-px h-12 bg-gradient-to-b from-slate-500 to-transparent" />
-        </div>
+     
       </div>
     </section>
   )
