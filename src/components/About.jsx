@@ -20,7 +20,7 @@ export default function About() {
             <div className="md:col-span-3 space-y-4">
               <p className="text-slate-300 text-lg leading-relaxed font-light">
                 Signal optimization engineer at NoTraffic working at the intersection of
-                transportation infrastructure and software for over five years.
+                transportation infrastructure and software applications for over five years.
               </p>
               <p className="text-slate-400 leading-relaxed">
                 I am Currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>, a series C startup,
