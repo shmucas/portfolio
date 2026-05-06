@@ -23,6 +23,7 @@ const skillGroups = [
     skills: [
       'Python',
       'Bash / Shell Scripting',
+      'Agentic Engineering',
       'PostgreSQL',
       'MySQL',
       'React',
@@ -36,7 +37,6 @@ const skillGroups = [
     category: 'Automation & Validation',
     icon: '◉',
     skills: [
-      'File Parsing',
       'Rule Engine Design',
       'User Acceptance Testing',
       'CI/CD (Jenkins)',
