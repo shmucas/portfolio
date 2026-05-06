@@ -47,7 +47,7 @@ export default function Hero() {
 
       <div className="relative max-w-5xl mx-auto px-6 pt-24 pb-16">
         <div className="animate-fade-up" style={{ animationDelay: '0ms' }}>
-          <p className="mono-label mb-4">Transportation Systems Engineer</p>
+          <p className="mono-label mb-4">Signal Optimization Engineer</p>
         </div>
 
         <div className="animate-fade-up" style={{ animationDelay: '80ms' }}>
@@ -111,7 +111,7 @@ export default function Hero() {
           style={{ animationDelay: '800ms' }}
         >
           <span className="font-mono text-[10px] tracking-widest uppercase text-slate-500 rotate-90 origin-center translate-x-3">
-            scroll
+           
           </span>
           <div className="w-px h-12 bg-gradient-to-b from-slate-500 to-transparent" />
         </div>
