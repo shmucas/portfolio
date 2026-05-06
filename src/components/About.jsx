@@ -14,7 +14,7 @@ export default function About() {
     <section id="about" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
         <div ref={ref} className="section-fade">
-          <p className="mono-label mb-8">About</p>
+          <p className="mono-label mb-8">Professional Career</p>
 
           <div className="grid md:grid-cols-5 gap-12 items-start">
             <div className="md:col-span-3 space-y-4">
@@ -44,6 +44,8 @@ export default function About() {
                 optimization workflows, and deployment pipelines used in day to day traffic signal operations. I work primarily in Python with
                 PostgreSQL, Linux, and Azure infrastructure.
               </p>
+              <p className="mono-label mb-8">About Me</p>
+
               <p className="text-slate-400 leading-relaxed">
                 Born in Brazil, raised in Maine and have called Atlanta home since 2012. As an immigrant I bring a perspective shaped by a lot of different places and cultures. Outside of work I run, play soccer, read, sketch and take my camera anywhere worth the trip. I've always been drawn to the overlap between creativity and analytical thinking — it's what pulled me toward engineering and keeps me sharp outside of it.
               </p>
