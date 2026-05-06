@@ -9,6 +9,15 @@ const socialLinks = [
     ),
   },
   {
+    label: 'Substack',
+    href: 'https://substack.com/@thisislucasferreira',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+      </svg>
+    ),
+  },
+  {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/lucas-ferreira-pe-b6631a142/',
     icon: (
