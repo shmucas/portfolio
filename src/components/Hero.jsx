@@ -58,7 +58,7 @@ export default function Hero() {
 
         <div className="animate-fade-up" style={{ animationDelay: '160ms' }}>
           <p className="text-lg sm:text-xl text-slate-400 max-w-xl leading-relaxed mb-6 font-light">
-            Building tooling and optimization systems for{' '}
+            Building modern systems for {' '}
             <span className="text-slate-300">intelligent traffic infrastructure.</span>
           </p>
         </div>
