@@ -8,12 +8,12 @@ const jobs = [
     location: 'Atlanta, GA',
     current: true,
     bullets: [
-      'Lead deployment and optimization of adaptive signal control algorithms across Phoenix, Topeka, Missouri City, Naples, and Montreal.',
+      'Lead deployment and optimization of  NoTraffic proprietary optimization algorithms across Phoenix, Topeka, Missouri City, West Allis, Naples, and Montreal.',
       'Configured adaptive signal control deployments across national corridors, reducing intersection delay by up to 30% and delivering performance analytics reports for municipal agencies.',
       'Primary liaison between R&D (Israel) and U.S. field operations — translating traffic engineering requirements into actionable product improvements.',
-      'Manage and maintain 60+ signalized intersections nationwide: system monitoring, troubleshooting, agency training, and technical sales support.',
+      'Manage and maintain 72+ signalized intersections nationwide: system monitoring, troubleshooting, agency training, and technical sales support.',
     ],
-    tags: ['Adaptive Signal Control', 'NTCIP', 'Signal Optimization', 'Traffic Operations'],
+    tags: ['Adaptive Signal Control', 'Agentic Engineering', 'Data Analysis', 'Algorithim Tuning'],
   },
   {
     company: 'Q-Free ASA',
@@ -26,7 +26,7 @@ const jobs = [
       'Directed User Acceptance Testing (UAT) for major deployments: City of Laval, City of Dallas TX, and North Carolina DOT.',
       'Served as engineering lead for adaptive traffic control deployments in Boulder, CO and Conway, AR.',
     ],
-    tags: ['Traffic Management', 'UAT', 'ATMS', 'Controller Software', 'Adaptive Control'],
+    tags: ['Sales Engineering', 'UAT', 'Customer Support', 'Azure Cloud Deployment', 'PostGresQl'],
   },
   {
     company: 'Kimley-Horn',

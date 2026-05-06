@@ -23,7 +23,7 @@ export default function About() {
                 transportation infrastructure and software for over five years.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                Currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>,
+                I am Currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>, a series C startup,
                 where I lead deployment of NoTraffic Optimization algorithms across major
                 municipalities — Phoenix, Topeka, Missouri City, Naples, West Allis, and Montreal. I manage 72+
                 signalized intersections nationwide, serve as the primary liaison between the R&D
@@ -33,15 +33,15 @@ export default function About() {
               <p className="text-slate-400 leading-relaxed">
                 Previously at <span className="text-slate-200 font-medium">Q-Free ASA</span>, I led product evaluation,
                 User Acceptance Testing, and technical deployments for statewide traffic management
-                platforms supporting Georgia DOT and North Carolina DOT. Earlier work at{' '}
+                platforms supporting Georgia DOT and North Carolina DOT. My earlier work at{' '}
                 <span className="text-slate-200 font-medium">Kimley-Horn</span> and{' '}
                 <span className="text-slate-200 font-medium">HNTB</span> covered traffic impact
-                studies, ITS design, and signal plan development.
+                studies, ITS design, and signal design.
               </p>
               <p className="text-slate-400 leading-relaxed">
                 On the software side, I build internal tooling used by my coworkers and myself. Those are typically file parsers, validation engines,
                 policy generators, and automation scripts. These go hand in hand with
-                optimization workflows, and deployment pipelines. I work primarily in Python with
+                optimization workflows, and deployment pipelines used in day to day traffic signal operations. I work primarily in Python with
                 PostgreSQL, Linux, and Azure infrastructure.
               </p>
             </div>
