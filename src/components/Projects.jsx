@@ -1,5 +1,3 @@
-import { useScrollFade } from '../hooks/useScrollFade'
-
 const projects = [
   {
     id: 'asc3-validation',
@@ -100,7 +98,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
-        <div ref={ref} className="section-fade">
+        <div>
           <div className="flex items-end justify-between mb-8">
             <p className="mono-label">Featured Projects</p>
             <p className="text-xs text-slate-600 font-mono hidden sm:block">
@@ -114,7 +112,7 @@ export default function Projects() {
               return (
                 <div
                   key={project.id}
-                  className={`group relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden card-hover ${a.border} transition-colors duration-200`}
+                  className={`group relative bg-slate-900 border border-slate-800 rounded-lg overflow-hidden ${a.border} transition-colors duration-200`}
                 >
                   {/* Top accent bar */}
                   <div className={`h-0.5 w-full ${a.top} opacity-60 group-hover:opacity-100 transition-opacity`} />

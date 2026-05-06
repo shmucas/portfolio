@@ -46,76 +46,58 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex flex-col justify-center dot-grid overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
     >
-      {/* Fade-out gradient at bottom */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-950 pointer-events-none" />
-
-      {/* Subtle blue glow at top-left */}
-      <div className="absolute top-0 left-0 w-[600px] h-[400px] bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-5xl mx-auto px-6 pt-24 pb-16">
-        <div className="animate-fade-up" style={{ animationDelay: '0ms' }}>
           <p className="mono-label mb-4">Signal Optimization Engineer</p>
-        </div>
 
-        <div className="animate-fade-up" style={{ animationDelay: '80ms' }}>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-50 tracking-tight leading-none mb-2">
             Lucas Ferreira, PE
           </h1>
-          <p className="font-mono text-xs text-slate-600 mb-4">Licensed Professional Engineer · Georgia · #PE054784</p>
-        </div>
+          <p className="font-mono text-xs text-slate-600 mb-6">Licensed Professional Engineer · Georgia · #PE054784</p>
 
-        <div className="animate-fade-up" style={{ animationDelay: '160ms' }}>
-          <p className="text-lg sm:text-xl text-slate-400 max-w-xl leading-relaxed mb-6 font-light">
-            Building modern systems for {' '}
+          <p className="text-lg sm:text-xl text-slate-400 max-w-xl leading-relaxed mb-8 font-light">
+            Building modern systems for{' '}
             <span className="text-slate-300">intelligent traffic infrastructure.</span>
           </p>
-        </div>
 
-        <div className="animate-fade-up" style={{ animationDelay: '240ms' }}>
           <div className="flex items-center gap-2 mb-8 text-slate-500">
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-blue-400/70">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
             </svg>
             <span className="font-mono text-xs tracking-wider">Atlanta, GA</span>
           </div>
-        </div>
 
-        <div
-          className="animate-fade-up flex flex-wrap items-center gap-3"
-          style={{ animationDelay: '320ms' }}
-        >
-          {socialLinks.map((link) => (
+          <div className="flex flex-wrap items-center gap-3">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 hover:text-blue-400 hover:border-blue-400/50 hover:bg-blue-400/5 transition-colors duration-150 font-mono text-xs tracking-wider"
+              >
+                {link.icon}
+                {link.label}
+                {link.external && (
+                  <svg viewBox="0 0 12 12" fill="currentColor" className="w-2.5 h-2.5 opacity-50">
+                    <path d="M3.5 0A.5.5 0 003 .5v1a.5.5 0 001 0V1h6.5v6.5h-.5a.5.5 0 000 1h1a.5.5 0 00.5-.5v-8a.5.5 0 00-.5-.5h-8zM.5 3a.5.5 0 00-.5.5v8a.5.5 0 00.5.5h8a.5.5 0 00.5-.5V7a.5.5 0 00-1 0v4.5h-7V4h4.5a.5.5 0 000-1H.5z" />
+                  </svg>
+                )}
+              </a>
+            ))}
             <a
-              key={link.label}
-              href={link.href}
-              target={link.external ? '_blank' : undefined}
-              rel={link.external ? 'noopener noreferrer' : undefined}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded border border-slate-700 bg-slate-900/60 text-slate-300 hover:text-blue-400 hover:border-blue-400/50 hover:bg-blue-400/5 transition-all duration-200 font-mono text-xs tracking-wider"
+              href="#contact"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 hover:bg-blue-500/20 hover:border-blue-400/60 transition-colors duration-150 font-mono text-xs tracking-wider"
             >
-              {link.icon}
-              {link.label}
-              {link.external && (
-                <svg viewBox="0 0 12 12" fill="currentColor" className="w-2.5 h-2.5 opacity-50">
-                  <path d="M3.5 0A.5.5 0 003 .5v1a.5.5 0 001 0V1h6.5v6.5h-.5a.5.5 0 000 1h1a.5.5 0 00.5-.5v-8a.5.5 0 00-.5-.5h-8zM.5 3a.5.5 0 00-.5.5v8a.5.5 0 00.5.5h8a.5.5 0 00.5-.5V7a.5.5 0 00-1 0v4.5h-7V4h4.5a.5.5 0 000-1H.5z" />
-                </svg>
-              )}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              Contact
             </a>
-          ))}
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded bg-blue-500/10 border border-blue-500/30 text-blue-400 hover:bg-blue-500/20 hover:border-blue-400/60 transition-all duration-200 font-mono text-xs tracking-wider"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            Contact
-          </a>
-        </div>
-
-     
+          </div>
       </div>
     </section>
   )

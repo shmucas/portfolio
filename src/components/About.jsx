@@ -1,5 +1,3 @@
-import { useScrollFade } from '../hooks/useScrollFade'
-
 const stats = [
   { value: '5+', label: 'Years in Traffic Engineering' },
   { value: '72+', label: 'Intersections Managed' },
@@ -8,12 +6,10 @@ const stats = [
 ]
 
 export default function About() {
-  const ref = useScrollFade()
-
   return (
     <section id="about" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
-        <div ref={ref} className="section-fade">
+        <div>
           <p className="mono-label mb-8">Professional Career</p>
 
           <div className="grid md:grid-cols-5 gap-12 items-start">

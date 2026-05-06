@@ -1,5 +1,3 @@
-import { useScrollFade } from '../hooks/useScrollFade'
-
 const skillGroups = [
   {
     category: 'Transportation Systems',
@@ -63,19 +61,17 @@ const skillGroups = [
 ]
 
 export default function Skills() {
-  const ref = useScrollFade()
-
   return (
     <section id="skills" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
-        <div ref={ref} className="section-fade">
+        <div>
           <p className="mono-label mb-8">Skills</p>
 
           <div className="grid sm:grid-cols-2 gap-6">
             {skillGroups.map((group) => (
               <div
                 key={group.category}
-                className="bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition-colors duration-200"
+                className="bg-slate-900 border border-slate-800 rounded-lg p-5 hover:border-slate-700 transition-colors duration-200"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-blue-400/60 text-sm font-mono">{group.icon}</span>

@@ -33,31 +33,6 @@
 }
 
 @layer utilities {
-  .dot-grid {
-    background-image: radial-gradient(circle, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
-    background-size: 28px 28px;
-  }
-
-  .section-fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-
-  .section-fade.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .card-hover {
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  }
-
   .mono-label {
     @apply font-mono text-xs tracking-widest uppercase text-blue-400;
   }

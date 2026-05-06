@@ -1,5 +1,3 @@
-import { useScrollFade } from '../hooks/useScrollFade'
-
 const roles = [
   {
     org: 'Society of St. Vincent de Paul',
@@ -30,19 +28,17 @@ const roles = [
 ]
 
 export default function Volunteer() {
-  const ref = useScrollFade()
-
   return (
     <section id="volunteer" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
-        <div ref={ref} className="section-fade">
+        <div>
           <p className="mono-label mb-8">Volunteer</p>
 
           <div className="grid sm:grid-cols-2 gap-4">
             {roles.map((r) => (
               <div
                 key={r.org}
-                className="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-slate-700 transition-colors duration-200"
+                className="bg-slate-900 border border-slate-800 rounded-lg p-6 hover:border-slate-700 transition-colors duration-200"
               >
                 <div className="flex items-start gap-3 mb-3">
                   <div className="mt-0.5 text-slate-500">{r.icon}</div>

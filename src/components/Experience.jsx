@@ -1,5 +1,3 @@
-import { useScrollFade } from '../hooks/useScrollFade'
-
 const jobs = [
   {
     company: 'NoTraffic',
@@ -52,12 +50,10 @@ const jobs = [
 ]
 
 export default function Experience() {
-  const ref = useScrollFade()
-
   return (
     <section id="experience" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
-        <div ref={ref} className="section-fade">
+        <div>
           <p className="mono-label mb-8">Experience</p>
 
           <div className="relative">
