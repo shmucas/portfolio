@@ -60,9 +60,10 @@ export default function Hero() {
         </div>
 
         <div className="animate-fade-up" style={{ animationDelay: '80ms' }}>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-50 tracking-tight leading-none mb-4">
-            Lucas Ferreira
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-50 tracking-tight leading-none mb-2">
+            Lucas Ferreira, PE
           </h1>
+          <p className="font-mono text-xs text-slate-600 mb-4">Licensed Professional Engineer · Georgia · #PE054784</p>
         </div>
 
         <div className="animate-fade-up" style={{ animationDelay: '160ms' }}>

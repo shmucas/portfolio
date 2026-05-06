@@ -44,6 +44,9 @@ export default function About() {
                 optimization workflows, and deployment pipelines used in day to day traffic signal operations. I work primarily in Python with
                 PostgreSQL, Linux, and Azure infrastructure.
               </p>
+              <p className="text-slate-400 leading-relaxed">
+                Born in Brazil, raised in Maine and have called Atlanta home since 2012. As an immigrant I bring a perspective shaped by a lot of different places and cultures. Outside of work I run, play soccer, read, sketch and take my camera anywhere worth the trip. I've always been drawn to the overlap between creativity and analytical thinking — it's what pulled me toward engineering and keeps me sharp outside of it.
+              </p>
             </div>
 
             <div className="md:col-span-2">
