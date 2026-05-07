@@ -19,7 +19,7 @@ export default function About() {
                 transportation infrastructure and software applications for over five years.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                I am Currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>, a series C startup,
+                I am currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>, a series C startup,
                 where I lead deployment of NoTraffic Optimization algorithms across major
                 municipalities — Phoenix, Topeka, Missouri City, Naples, West Allis, and Montreal. I manage 72+
                 signalized intersections nationwide, serve as the primary liaison between the R&D

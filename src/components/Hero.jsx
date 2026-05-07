@@ -58,8 +58,8 @@ export default function Hero() {
           <p className="font-mono text-xs text-slate-600 mb-6">Licensed Professional Engineer · Georgia · #PE054784</p>
 
           <p className="text-lg sm:text-xl text-slate-400 max-w-xl leading-relaxed mb-8 font-light">
-            Building modern systems for{' '}
-            <span className="text-slate-300">intelligent traffic infrastructure.</span>
+            I build the software that makes traffic signals smarter,{' '}
+            <span className="text-slate-300">from NTCIP protocol layers to adaptive optimization algorithms.</span>
           </p>
 
           <div className="flex items-center gap-2 mb-8 text-slate-500">

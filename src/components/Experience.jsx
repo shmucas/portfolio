@@ -11,7 +11,7 @@ const jobs = [
       'Primary liaison between R&D (Israel) and U.S. field operations — translating traffic engineering requirements into actionable product improvements.',
       'Manage and maintain 72+ signalized intersections nationwide: system monitoring, troubleshooting, agency training, and technical sales support.',
     ],
-    tags: ['Adaptive Signal Control', 'Agentic Engineering', 'Data Analysis', 'Algorithim Tuning'],
+    tags: ['Adaptive Signal Control', 'Agentic Engineering', 'Data Analysis', 'Algorithm Tuning'],
   },
   {
     company: 'Q-Free ASA',

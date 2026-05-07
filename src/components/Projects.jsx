@@ -122,15 +122,7 @@ export default function Projects() {
                       >
                         {project.label}
                       </span>
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        className="w-4 h-4 text-slate-600 group-hover:text-slate-400 transition-colors"
-                      >
-                        <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
+                      <span className="font-mono text-[10px] text-slate-600 tracking-wider">Private</span>
                     </div>
 
                     <h3 className="text-slate-100 font-semibold text-base mb-2 leading-snug">
