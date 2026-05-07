@@ -20,10 +20,10 @@ export default function About() {
               </p>
               <p className="text-slate-400 leading-relaxed">
                 I am currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>, a series C startup,
-                where I lead deployment of NoTraffic Optimization algorithms across major
+                where I lead the deployment of proprietary NoTraffic Optimization algorithms across major
                 municipalities — Phoenix, Topeka, Missouri City, Naples, West Allis, and Montreal. I manage 72+
-                signalized intersections nationwide, serve as the primary liaison between the R&D
-                team in Israel and U.S. field operations, and translate traffic engineering
+                signalized intersections nationwide, implementing AI to traffic signals to reduce vehicular delay and improve travel time. I serve as the primary liaison between the R&D
+                team in Israel and U.S. field operations, run micro and macro traffic simulations using the NoTraffic optimization algorithms, and translate traffic engineering
                 requirements into actionable product improvements.
               </p>
               <p className="text-slate-400 leading-relaxed">
@@ -37,13 +37,13 @@ export default function About() {
               <p className="text-slate-400 leading-relaxed">
                 On the software side, I build internal tooling used by my coworkers and myself. Those are typically file parsers, validation engines,
                 policy generators, and automation scripts. These go hand in hand with
-                optimization workflows, and deployment pipelines used in day to day traffic signal operations. I work primarily in Python with
+                 workflows in tuning and modifying the optimization algorithm to reduce vehicular delay and improve travel time. I work primarily in Python with
                 PostgreSQL, Linux, and Azure infrastructure.
               </p>
               <p className="mono-label mb-8">About Me</p>
 
               <p className="text-slate-400 leading-relaxed">
-                Born in Brazil, raised in Maine and have called Atlanta home since 2012. As an immigrant I bring a perspective shaped by a lot of different places and cultures. Outside of work I run, play soccer, read, sketch and take my camera anywhere worth the trip. I've always been drawn to the overlap between creativity and analytical thinking — it's what pulled me toward engineering and keeps me sharp outside of it.
+                I am a native Brazilian, but I was raised in Maine and have called Atlanta home since 2012. As an immigrant I bring a perspective shaped by a lot of different places and cultures. Outside of work I run, play soccer, read, sketch, play chess and take my camera anywhere worth the trip. I've always been drawn to the overlap between creativity and analytical thinking, it's what pulled me toward engineering and keeps me sharp outside of it.
               </p>
             </div>
 

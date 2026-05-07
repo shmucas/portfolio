@@ -8,10 +8,10 @@ const projects = [
     details: [
       'Parses binary and text-based ASC/3 .cfg file formats',
       'Rule engine validates timing plans, phase sequences, and detector configurations',
-      'Flags non-compliant optimization parameters against expected ranges',
-      'Generates structured reports for field engineers and agency reviewers',
+      'Flags non-compliant  parameters against expected ranges to ingest in to NoTraffic Optimization Algorithm'
+      
     ],
-    tags: ['Python', 'File Parsing', 'Rule Validation', 'CLI', 'ASC/3'],
+    tags: ['Python', 'JavaScript', 'CLI', 'ASC/3'],
     accent: 'blue',
   },
   {
@@ -21,12 +21,11 @@ const projects = [
     description:
       'A Python-based application for generating and managing traffic corridor policies and optimization configurations. Automates the creation of multi-intersection corridor strategies from structured inputs.',
     details: [
-      'Generates optimization policy files from corridor-level configuration inputs',
-      'Supports time-of-day and day-of-week policy scheduling',
+      'Generates policy files from corridor-level configuration inputs using Google Maps and NoTraffic Sensor Unit Metadata',
       'Validates generated policies against operational constraints',
-      'Exports configurations in formats compatible with the NoTraffic platform',
+      'Exports configurations in formats compatible with the NoTraffic Optimization Algorithm',
     ],
-    tags: ['Python', 'Policy Engine', 'YAML', 'Corridor Optimization'],
+    tags: ['Python', 'YAML'],
     accent: 'violet',
   },
   {
@@ -37,28 +36,14 @@ const projects = [
       'Engineering work integrating EOS Cobalt traffic controllers with the NoTraffic optimization algorithm — covering NTCIP command sets, controller communications, diagnostics, and operations workflows.',
     details: [
       'NTCIP protocol implementation for controller command and status retrieval',
-      'EOS Cobalt controller diagnostics, configuration reads, and remote management',
+      'EOS Cobalt controller diagnostics',
       'Automated health checks and alert pipelines for intersection monitoring',
-      'Integration layer bridging raw controller data with the NoTraffic optimization engine',
+      'Integration layer bridging hi resoultion data with the NoTraffic optimization engine',
     ],
     tags: ['NTCIP', 'EOS Cobalt', 'TCP/IP', 'Python', 'Controller Comms'],
     accent: 'emerald',
-  },
-  {
-    id: 'optimization-logic',
-    label: 'Optimization Logic',
-    title: 'Traffic Optimization Logic & Tooling',
-    description:
-      'Documentation and tooling around adaptive signal control logic: sequence changes by pattern, time-of-day scheduling, and traffic operations automation supporting the NoTraffic deployment workflow.',
-    details: [
-      'Sequence-by-pattern logic for dynamic phase reordering based on demand',
-      'Time-of-day plan scheduling and transition management',
-      'Operational automation scripts for batch configuration updates',
-      'Internal documentation of optimization parameter interactions and edge cases',
-    ],
-    tags: ['Adaptive Control', 'Signal Timing', 'Scheduling', 'Automation', 'Python'],
-    accent: 'amber',
-  },
+  }
+  
 ]
 
 const accentMap = {

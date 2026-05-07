@@ -7,11 +7,11 @@ const jobs = [
     current: true,
     bullets: [
       'Lead deployment and optimization of  NoTraffic proprietary optimization algorithms across Phoenix, Topeka, Missouri City, West Allis, Naples, and Montreal.',
-      'Configured adaptive signal control deployments across national corridors, reducing intersection delay by up to 30% and delivering performance analytics reports for municipal agencies.',
-      'Primary liaison between R&D (Israel) and U.S. field operations — translating traffic engineering requirements into actionable product improvements.',
+      'Configured AI signal control deployments across national corridors, reducing intersection delay by up to 30% and delivering performance analytics reports for municipal agencies such as reduction in travel time and red light running.',
+      'Primary liaison between R&D (Israel) and U.S. field operations — translating traffic engineering requirements into actionable product improvements and algorithm modifications.',
       'Manage and maintain 72+ signalized intersections nationwide: system monitoring, troubleshooting, agency training, and technical sales support.',
     ],
-    tags: ['Adaptive Signal Control', 'Agentic Engineering', 'Data Analysis', 'Algorithm Tuning'],
+    tags: ['Adaptive Signal Control', 'Agentic Engineering', 'Data Analysis', 'Python', 'Algorithms'],
   },
   {
     company: 'Q-Free ASA',
