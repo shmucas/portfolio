@@ -8,11 +8,11 @@ const projects = [
     details: [
       'Parses binary and text-based ASC/3 .cfg file formats',
       'Rule engine validates timing plans, phase sequences, and detector configurations',
-      'Flags non-compliant  parameters against expected ranges to ingest in to NoTraffic Optimization Algorithm'
-      
+      'Flags non-compliant parameters against expected ranges to ingest into NoTraffic Optimization Algorithm'
     ],
     tags: ['Python', 'JavaScript', 'CLI', 'ASC/3'],
     accent: 'blue',
+    private: true,
   },
   {
     id: 'corridor-policy',
@@ -27,6 +27,7 @@ const projects = [
     ],
     tags: ['Python', 'YAML'],
     accent: 'violet',
+    private: true,
   },
   {
     id: 'controller-integration',
@@ -38,10 +39,11 @@ const projects = [
       'NTCIP protocol implementation for controller command and status retrieval',
       'EOS Cobalt controller diagnostics',
       'Automated health checks and alert pipelines for intersection monitoring',
-      'Integration layer bridging hi resoultion data with the NoTraffic optimization engine',
+      'Integration layer bridging high resolution data with the NoTraffic optimization engine',
     ],
     tags: ['NTCIP', 'EOS Cobalt', 'TCP/IP', 'Python', 'Controller Comms'],
     accent: 'emerald',
+    private: true,
   },
   {
     id: 'virtual-traffic-simulation',
@@ -52,12 +54,12 @@ const projects = [
     details: [
       'NTCIP protocol implementation for controller databases',
       'Open sourced',
-      'Integration layer ingesting traffic signal timing in to a simulated corridor ',
+      'Integration layer ingesting traffic signal timing into a simulated corridor',
     ],
     tags: ['NTCIP', 'JavaScript', 'Python', 'Fullstack'],
     accent: 'emerald',
+    github: 'https://github.com/shmucas/trafficsim',
   }
-  
 ]
 
 const accentMap = {
@@ -111,7 +113,6 @@ export default function Projects() {
                   key={project.id}
                   className={`group relative bg-slate-900 border border-slate-800 rounded-lg overflow-hidden ${a.border} transition-colors duration-200`}
                 >
-                  {/* Top accent bar */}
                   <div className={`h-0.5 w-full ${a.top} opacity-60 group-hover:opacity-100 transition-opacity`} />
 
                   <div className="p-6">
@@ -121,7 +122,21 @@ export default function Projects() {
                       >
                         {project.label}
                       </span>
-                      <span className="font-mono text-[10px] text-slate-600 tracking-wider">Private</span>
+
+                      {project.github ? (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono text-[10px] text-slate-400 tracking-wider hover:text-white transition-colors"
+                        >
+                          GitHub ↗
+                        </a>
+                      ) : (
+                        <span className="font-mono text-[10px] text-slate-600 tracking-wider">
+                          Private
+                        </span>
+                      )}
                     </div>
 
                     <h3 className="text-slate-100 font-semibold text-base mb-2 leading-snug">
