@@ -47,16 +47,16 @@ const projects = [
   },
   {
     id: 'virtual-traffic-simulation',
-    label: 'Virtualized Traffic Simulation Web App',
+    label: 'Traffic Simulation',
     title: 'Locally Hosted Traffic Simulation Web App',
     description:
-      'A JavaScript and Python web application that ingests turning movement counts, intersection type and geometry, traffic signal timing, intersection NTCIP compliant databases and generates a traffic simulation using HCM 7th edition delay calculations',
+      'A full-stack React and Python application that ingests turning movement counts, intersection geometry, and NTCIP controller databases to run a multi-intersection corridor simulation using HCM 7th Edition Chapter 19 methodology.',
     details: [
-      'NTCIP protocol implementation for controller databases',
-      'Open sourced',
-      'Integration layer ingesting traffic signal timing into a simulated corridor',
+      'NTCIP parser handles Econolite ASC/3, Intelight, and generic NTCIP CSV formats — extracting phase parameters, timing plans, cycle lengths, offsets, splits, and detector channels',
+      'HCM 7th Edition signalized intersection engine computing adjusted saturation flow, uniform delay (d1), incremental delay (d2), 95th percentile queue, v/c ratio, and LOS A–F per lane group',
+      'Robertson platoon dispersion model propagates arrival profiles between intersections and renders a time-space diagram',
     ],
-    tags: ['NTCIP', 'JavaScript', 'Python', 'Fullstack'],
+    tags: ['NTCIP', 'HCM 7th Edition', 'React', 'Python', 'FastAPI', 'SQLite'],
     accent: 'emerald',
     github: 'https://github.com/shmucas/trafficsim',
   }
