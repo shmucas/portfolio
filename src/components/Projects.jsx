@@ -42,6 +42,20 @@ const projects = [
     ],
     tags: ['NTCIP', 'EOS Cobalt', 'TCP/IP', 'Python', 'Controller Comms'],
     accent: 'emerald',
+  },
+  {
+    id: 'virtual-traffic-simulation',
+    label: 'Virtualized Traffic Simulation Web App',
+    title: 'Locally Hosted Traffic Simulation Web App',
+    description:
+      'A JavaScript and Python web application that ingests turning movement counts, intersection type and geometry, traffic signal timing, intersection NTCIP compliant databases and generates a traffic simulation using HCM 7th edition delay calculations',
+    details: [
+      'NTCIP protocol implementation for controller databases',
+      'Open sourced',
+      'Integration layer ingesting traffic signal timing in to a simulated corridor ',
+    ],
+    tags: ['NTCIP', 'JavaScript', 'Python', 'Fullstack'],
+    accent: 'emerald',
   }
   
 ]
