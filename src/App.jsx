@@ -6,10 +6,12 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Volunteer from './components/Volunteer'
 import Footer from './components/Footer'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-950">
+      <Analytics />
       <Nav />
       <main>
         <Hero />
