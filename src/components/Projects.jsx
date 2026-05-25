@@ -46,6 +46,23 @@ const projects = [
     private: true,
   },
   {
+    id: 'lulu-ai',
+    label: 'Personal Project',
+    title: 'lulu.ai — Local Voice Assistant',
+    description:
+      'A fully local voice assistant I built from scratch that runs entirely on my machine. No cloud, no API fees. I talk to it through a physical button wired up on an Arduino, it listens, thinks, and talks back — all while showing its status on an LCD screen on my desk.',
+    details: [
+      'Voice input via Faster Whisper STT running locally — transcribes speech and auto-sends to the LLM',
+      'Streams responses token-by-token from a local Qwen2.5 7B model via Ollama over WebSockets',
+      'Arduino UNO R3 button triggers recording and opens Chrome automatically; LCD shows real-time state',
+      'Live web search via DuckDuckGo and weather via Open-Meteo injected into the prompt before answering',
+      'TTS playback via subprocess with a hard-stop button that kills audio mid-sentence cleanly',
+    ],
+    tags: ['Python', 'FastAPI', 'WebSockets', 'Whisper', 'Ollama', 'Arduino', 'Vanilla JS'],
+    accent: 'amber',
+    github: 'https://github.com/shmucas/lulu.ai',
+  },
+  {
     id: 'virtual-traffic-simulation',
     label: 'Traffic Simulation',
     title: 'Locally Hosted Traffic Simulation Web App',
