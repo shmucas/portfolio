@@ -11,7 +11,7 @@ const jobs = [
       'Served as the primary liaison between the R&D team in Israel and U.S. field operations as the lead product engineer to translate traffic engineering requirements into algorithm tuning and improvements.',
       'Manage and maintain 72+ signalized intersections nationwide using the NoTraffic AI optimization platform, providing system monitoring, troubleshooting, agency training, and technical sales support.',
     ],
-    tags: ['SUMO Microsimulation', 'Signal Optimization', 'TPM Workshops', 'Python', 'Data Analysis'],
+    tags: ['SUMO Microsimulation', 'AI Implementation', 'Bash Scripts', 'Python', 'Project Delivery'],
   },
   {
     company: 'Q-Free ASA',
