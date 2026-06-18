@@ -12,8 +12,7 @@ export default function Footer() {
               Let's work together.
             </h2>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Open to conversations about transportation systems, signal optimization, using AI for traffic engineering applications,
-              and technical infrastructure projects.
+              Open to conversations about transportation systems, signal optimization, AI for traffic engineering, and the intersection of technical engineering and stakeholder management.
             </p>
           </div>
 

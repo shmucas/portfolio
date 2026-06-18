@@ -15,10 +15,10 @@ const roles = [
   },
   {
     org: 'Beta Iota Alumni Board · Georgia Tech ATO',
-    role: 'Alumni Board Member & Treasurer',
+    role: 'Alumni Board President',
     sub: 'Alpha Tau Omega · Georgia Tech',
     description:
-      'Manage chapter alumni finances — budgeting, tax filing, and financial reporting. Organize alumni events, provide financial counseling to the active chapter, and support the long-term financial health of the organization.',
+      'Promoted to president of the non-profit alumni board organization. In charge of supporting chapter leadership ad hoc, managing the endowment, and facilitating chapter scholarships on behalf of the ATO Foundation.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />

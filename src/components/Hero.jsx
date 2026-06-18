@@ -48,6 +48,18 @@ export default function Hero() {
       id="top"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
     >
+      {/* Subtle dot-grid texture */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern id="dot-grid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="1" fill="rgb(148 163 184)" fillOpacity="0.035" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dot-grid)" />
+      </svg>
 
       <div className="relative max-w-5xl mx-auto px-6 pt-24 pb-16">
           <p className="mono-label mb-4">Signal Optimization Engineer</p>
@@ -66,7 +78,7 @@ export default function Hero() {
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-blue-400/70">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
             </svg>
-            <span className="font-mono text-xs tracking-wider">Atlanta, GA</span>
+            <span className="font-mono text-xs tracking-wider text-slate-400">Atlanta, GA</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">

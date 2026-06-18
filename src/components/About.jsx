@@ -1,7 +1,7 @@
 const stats = [
   { value: '5+', label: 'Years in Traffic Engineering' },
   { value: '72+', label: 'Intersections Managed' },
-  { value: '30%', label: 'Delay Reduction Achieved' },
+  { value: '25%', label: 'Corridor Delay Reduction (West Allis)' },
   { value: 'GT', label: 'Georgia Tech, B.S. Civil Eng.' },
 ]
 
@@ -19,12 +19,9 @@ export default function About() {
                 transportation infrastructure and software applications for over five years.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                I am currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>, a series C startup,
-                where I lead the deployment of proprietary NoTraffic Optimization algorithms across major
-                municipalities — Phoenix, Topeka, Missouri City, Naples, West Allis, and Montreal. I manage 72+
-                signalized intersections nationwide, implementing AI to traffic signals to reduce vehicular delay and improve travel time. I serve as the primary liaison between the R&D
-                team in Israel and U.S. field operations, run micro and macro traffic simulations using the NoTraffic optimization algorithms, and translate traffic engineering
-                requirements into actionable product improvements.
+                I am currently a <span className="text-slate-200 font-medium">Signal Optimization Engineer at NoTraffic</span>, a Series C AI mobility startup,
+                where I own optimization deployments end-to-end across the full project lifecycle. That means running stakeholder TPM workshops to convert operational pain points into measurable objectives, building and calibrating SUMO microsimulation models to de-risk agency adoption before any field deployment, configuring the optimization algorithm at the Control Unit level, and producing validated before/after performance assessments. I manage 72+
+                signalized intersections across Phoenix, Topeka, Missouri City, West Allis, Naples, and Montreal, and serve as the primary bridge between the R&D team in Israel and U.S. field operations.
               </p>
               <p className="text-slate-400 leading-relaxed">
                 Previously at <span className="text-slate-200 font-medium">Q-Free ASA</span>, I led product evaluation,
@@ -52,9 +49,9 @@ export default function About() {
                 {stats.map((s) => (
                   <div
                     key={s.label}
-                    className="bg-slate-900 border border-slate-800 rounded-lg p-4 hover:border-slate-700 transition-colors"
+                    className="bg-slate-900 border border-slate-800 rounded-lg p-4 hover:border-slate-700 hover:border-b-blue-400/20 transition-colors"
                   >
-                    <div className="text-2xl font-bold text-blue-400 font-mono mb-1">{s.value}</div>
+                    <div className="text-3xl font-bold text-blue-400 font-mono mb-1">{s.value}</div>
                     <div className="text-xs text-slate-500 leading-tight">{s.label}</div>
                   </div>
                 ))}

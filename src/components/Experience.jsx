@@ -6,12 +6,12 @@ const jobs = [
     location: 'Atlanta, GA',
     current: true,
     bullets: [
-      'Lead deployment and optimization of  NoTraffic proprietary optimization algorithms across Phoenix, Topeka, Missouri City, West Allis, Naples, and Montreal.',
-      'Configured AI signal control deployments across national corridors, reducing intersection delay by up to 30% and delivering performance analytics reports for municipal agencies such as reduction in travel time and red light running.',
-      'Primary liaison between R&D (Israel) and U.S. field operations — translating traffic engineering requirements into actionable product improvements and algorithm modifications.',
-      'Manage and maintain 72+ signalized intersections nationwide: system monitoring, troubleshooting, agency training, and technical sales support.',
+      'Owned signal optimization deployments end-to-end across the full project lifecycle — stakeholder TPM workshops, SUMO microsimulation, CU configuration, and validated before/after performance reporting for public-sector agencies.',
+      'Delivered a 16-intersection corridor optimization (Missouri City SH6) that reduced per-vehicle delay ~10% while the corridor absorbed ~15% volume growth — cutting wait times as demand rose.',
+      'Achieved ~25% corridor-wide delay reduction on the West Allis Greenfield Avenue corridor through TPM-driven optimization, with coordinated mainline delay improving 26.7% AM and 14.5% PM.',
+      'Serve as primary liaison between R&D (Israel) and U.S. field operations, translating traffic engineering requirements into actionable algorithm modifications and product improvements.',
     ],
-    tags: ['Adaptive Signal Control', 'Agentic Engineering', 'Data Analysis', 'Python', 'Algorithms'],
+    tags: ['SUMO Microsimulation', 'Signal Optimization', 'TPM Workshops', 'Python', 'Data Analysis'],
   },
   {
     company: 'Q-Free ASA',
@@ -58,14 +58,14 @@ export default function Experience() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 top-2 bottom-2 w-px bg-slate-800 hidden md:block" />
+            <div className="absolute left-0 top-2 bottom-2 w-px bg-slate-700 hidden md:block" />
 
             <div className="space-y-10">
               {jobs.map((job, i) => (
                 <div key={i} className="md:pl-8 relative">
                   {/* Timeline dot */}
                   <div
-                    className={`absolute left-0 top-1.5 w-2 h-2 rounded-full -translate-x-[3px] hidden md:block ${
+                    className={`absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full -translate-x-[4px] hidden md:block ${
                       job.current ? 'bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.6)]' : 'bg-slate-600'
                     }`}
                   />
