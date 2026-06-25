@@ -10,8 +10,9 @@ const jobs = [
       'Configured AI traffic signal control deployments across national corridors reducing intersection delay by up to 30% and reducing travel time by 10%.',
       'Served as the primary liaison between the R&D team in Israel and U.S. field operations as the lead product engineer to translate traffic engineering requirements into algorithm tuning and improvements.',
       'Manage and maintain 72+ signalized intersections nationwide using the NoTraffic AI optimization platform, providing system monitoring, troubleshooting, agency training, and technical sales support.',
+      'Engineered an AI agent system using Claude Code and a custom Metabase MCP server to fully automate ESG report generation — reducing a 12-hour manual reporting process to under 1 hour end-to-end, including data pull, analysis, chart rendering, and branded document assembly, enabling faster project delivery and closeout.',
     ],
-    tags: ['SUMO Microsimulation', 'AI Implementation', 'Bash Scripts', 'Python', 'Project Delivery'],
+    tags: ['SUMO Microsimulation', 'AI Implementation', 'Bash Scripts', 'Python', 'Project Delivery', 'AI Agents', 'MCP'],
   },
   {
     company: 'Q-Free ASA',
