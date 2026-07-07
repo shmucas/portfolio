@@ -32,11 +32,8 @@ const skillGroups = [
       'Ollama / Local LLMs',
       'Git / GitHub',
       'AutoCAD / Civil 3D',
-      'Embedded Systems (ESP32)',
       'Arduino / PlatformIO',
       'I2S Audio Programming',
-      'Speech-to-Text (Whisper)',
-      'Text-to-Speech (Piper)',
     ],
   },
   {
