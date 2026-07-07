@@ -2,9 +2,9 @@ const projects = [
   {
     id: 'esg-toolkit',
     label: 'AI Agent Orchestration',
-    title: 'ESG Toolkit — Agent-Driven Reporting System',
+    title: 'ESG Toolkit: Agent-Driven Reporting System',
     description:
-      'An AI-agent-orchestrated toolkit that turns live signal performance data into standard ESG deliverables. Built as a set of auto-activating Claude Code skills — each encoding a complete analyst workflow (data pull, analysis, charting, and brand-styled document assembly) — so the agent recognizes the request, selects the right procedure, and produces a finished .pptx or .docx end-to-end.',
+      'An AI-agent-orchestrated toolkit that turns live signal performance data into standard ESG deliverables. Built as a set of auto-activating Claude Code skills, each encoding a complete analyst workflow (data pull, analysis, charting, and brand-styled document assembly), so the agent recognizes the request, selects the right procedure, and produces a finished .pptx or .docx end-to-end.',
     details: [
       'Architected four self-contained Claude Code agent skills (SKILL.md-driven) that auto-activate from natural-language requests and each produce a distinct, client-facing deliverable.',
       'Wired a custom MCP server into the agent for live SQL querying against an internal BI platform, with a parallel API-key fallback path for resilience.',
@@ -22,7 +22,7 @@ const projects = [
     description:
       'A full-stack React and Python application that ingests turning movement counts, intersection geometry, and NTCIP controller databases to run a multi-intersection corridor simulation using HCM 7th Edition Chapter 19 methodology.',
     details: [
-      'NTCIP parser handles Econolite ASC/3, Intelight, and generic NTCIP CSV formats — extracting phase parameters, timing plans, cycle lengths, offsets, splits, and detector channels',
+      'NTCIP parser handles Econolite ASC/3, Intelight, and generic NTCIP CSV formats, extracting phase parameters, timing plans, cycle lengths, offsets, splits, and detector channels',
       'HCM 7th Edition signalized intersection engine computing adjusted saturation flow, uniform delay (d1), incremental delay (d2), 95th percentile queue, v/c ratio, and LOS A–F per lane group',
       'Robertson platoon dispersion model propagates arrival profiles between intersections and renders a time-space diagram',
     ],
@@ -33,7 +33,7 @@ const projects = [
   {
     id: 'lulu-desk-companion',
     label: 'AI Hardware / Voice Assistant',
-    title: 'Lulu - AI Desk Companion',
+    title: 'Lulu: AI Desk Companion',
     description:
       'A physical desk companion built on an ESP32-S3 microcontroller that talks to a Mac backend over WiFi. It listens for voice commands, transcribes and understands them with local AI models, and responds out loud with a personality shown on a small pixel-art face display. Everything runs locally, no cloud APIs.',
     details: [
