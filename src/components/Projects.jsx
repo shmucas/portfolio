@@ -1,30 +1,15 @@
 const projects = [
   {
-    id: 'asc3-validation',
-    label: 'Validation Tooling',
-    title: 'ASC/3 Database Validation App',
-    description:
-      'A validation tool that parses ASC/3 .cfg controller configuration files and verifies NoTraffic optimization configurations against expected operational parameters. Ensures controller settings meet agency-specific operational requirements before deployment.',
-    details: [
-      'Parses binary and text-based ASC/3 .cfg file formats',
-      'Rule engine validates timing plans, phase sequences, and detector configurations',
-      'Flags non-compliant parameters against expected ranges to ingest into NoTraffic Optimization Algorithm',
-      'Extended parsing to additional controller database types, normalizing timing plans into an algorithm-ready format and speeding up delivery on new AI traffic management deployments'
-    ],
-    tags: ['Python', 'JavaScript', 'CLI', 'ASC/3'],
-    accent: 'blue',
-    private: true,
-  },
-  {
     id: 'esg-toolkit',
     label: 'AI Agent Orchestration',
     title: 'ESG Toolkit — Agent-Driven Reporting System',
     description:
       'An AI-agent-orchestrated toolkit that turns live signal performance data into standard ESG deliverables. Built as a set of auto-activating Claude Code skills — each encoding a complete analyst workflow (data pull, analysis, charting, and brand-styled document assembly) — so the agent recognizes the request, selects the right procedure, and produces a finished .pptx or .docx end-to-end.',
     details: [
-      'Architected three self-contained Claude Code agent skills (SKILL.md-driven) that auto-activate from natural-language requests and each produce a distinct, client-facing deliverable.',
+      'Architected four self-contained Claude Code agent skills (SKILL.md-driven) that auto-activate from natural-language requests and each produce a distinct, client-facing deliverable.',
       'Wired a custom MCP server into the agent for live SQL querying against an internal BI platform, with a parallel API-key fallback path for resilience.',
       'Engineered domain logic for peak-hour detection, before/after corridor delay analysis, and intersection performance metrics, with Economist-style chart rendering and credential-safe design (tokens only in environment variables, never committed).',
+      'Added a fourth skill that parses timing plans from different controller database types into an algorithm-ready format for AI traffic management, speeding up project delivery.',
     ],
     tags: ['Claude Code', 'AI Agents', 'MCP', 'Python', 'python-pptx', 'python-docx', 'HCM 7th Edition'],
     accent: 'violet',
