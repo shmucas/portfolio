@@ -32,7 +32,7 @@ const skillGroups = [
       'Ollama / Local LLMs',
       'Git / GitHub',
       'AutoCAD / Civil 3D',
-      'Arduino / PlatformIO',
+      'Embedded Systems (RPi5, ESP32, Arduino)',
       'I2S Audio Programming',
     ],
   },
