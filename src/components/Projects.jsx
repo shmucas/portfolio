@@ -21,11 +21,9 @@ const projects = [
     description:
       'An AI-agent-orchestrated toolkit that turns live signal performance data into standard ESG deliverables. Built as a set of auto-activating Claude Code skills — each encoding a complete analyst workflow (data pull, analysis, charting, and brand-styled document assembly) — so the agent recognizes the request, selects the right procedure, and produces a finished .pptx or .docx end-to-end.',
     details: [
-      'Architected three self-contained Claude Code agent skills (SKILL.md-driven) that auto-activate from natural-language requests, each producing a distinct client-facing deliverable.',
-      'Wired a custom MCP server into the agent, exposing live SQL querying against an internal BI platform as a first-class tool with a parallel API-key fallback path for resilience.',
-      'Designed each skill as a deterministic, repeatable procedure — turning ad-hoc analyst judgment into versioned, auditable automation that any team member can trigger.',
-      'Engineered domain logic for floating peak-hour detection, before/after corridor delay analysis, and intersection performance metrics with Economist-style chart rendering.',
-      'Built credential-safe by design — tokens live only in environment variables, enforced through agent instructions and .gitignore rules, never written to files or commits.',
+      'Architected three self-contained Claude Code agent skills (SKILL.md-driven) that auto-activate from natural-language requests and each produce a distinct, client-facing deliverable.',
+      'Wired a custom MCP server into the agent for live SQL querying against an internal BI platform, with a parallel API-key fallback path for resilience.',
+      'Engineered domain logic for peak-hour detection, before/after corridor delay analysis, and intersection performance metrics, with Economist-style chart rendering and credential-safe design (tokens only in environment variables, never committed).',
     ],
     tags: ['Claude Code', 'AI Agents', 'MCP', 'Python', 'python-pptx', 'python-docx', 'HCM 7th Edition'],
     accent: 'violet',
