@@ -8,7 +8,8 @@ const projects = [
     details: [
       'Parses binary and text-based ASC/3 .cfg file formats',
       'Rule engine validates timing plans, phase sequences, and detector configurations',
-      'Flags non-compliant parameters against expected ranges to ingest into NoTraffic Optimization Algorithm'
+      'Flags non-compliant parameters against expected ranges to ingest into NoTraffic Optimization Algorithm',
+      'Extended parsing to additional controller database types, normalizing timing plans into an algorithm-ready format and speeding up delivery on new AI traffic management deployments'
     ],
     tags: ['Python', 'JavaScript', 'CLI', 'ASC/3'],
     accent: 'blue',
