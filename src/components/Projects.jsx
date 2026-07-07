@@ -45,6 +45,21 @@ const projects = [
     tags: ['NTCIP', 'HCM 7th Edition', 'React', 'Python', 'FastAPI', 'SQLite'],
     accent: 'emerald',
     github: 'https://github.com/shmucas/trafficsim',
+  },
+  {
+    id: 'lulu-desk-companion',
+    label: 'AI Hardware / Voice Assistant',
+    title: 'Lulu - AI Desk Companion',
+    description:
+      'A physical desk companion built on an ESP32-S3 microcontroller that talks to a Mac backend over WiFi. It listens for voice commands, transcribes and understands them with local AI models, and responds out loud with a personality shown on a small pixel-art face display. Everything runs locally, no cloud APIs.',
+    details: [
+      'Built the full voice pipeline: microphone capture on the ESP32, speech-to-text, a two-model local LLM setup (one plans actions like setting timers or checking weather, the other holds the conversation and picks an emotion), and text-to-speech spoken back through a small speaker',
+      'Designed a pixel-art face on a tiny OLED screen that animates between six expressions (idle, listening, thinking, speaking, etc.) so the device feels alive and shows what it is doing',
+      'Added practical features on top: persistent memory so it remembers facts about the user, timers and reminders that speak up on their own, and a push-to-talk button for reliable activation',
+    ],
+    tags: ['ESP32-S3', 'Python', 'FastAPI', 'WebSockets', 'Ollama', 'Local LLMs', 'faster-whisper', 'Piper TTS', 'Arduino/PlatformIO'],
+    accent: 'amber',
+    github: 'https://github.com/shmucas/lulu.ai-desk-companion',
   }
 ]
 
