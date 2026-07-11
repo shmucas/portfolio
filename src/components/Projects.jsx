@@ -1,5 +1,21 @@
 const projects = [
   {
+    id: 'atms-lite',
+    label: 'Open Sourced Traffic Signal Management System',
+    title: 'ATMS-lite: Live NTCIP Signal Control',
+    description:
+      'A locally hosted Advanced Traffic Management System that talks NTCIP 1202 over SNMP to a physical Q-Free MaxTime 2070 traffic controller on my bench, and scales out to many intersections through lightweight virtual controllers. Phase states, ped signals, and detector calls stream to a live React dashboard, and the dashboard can place calls back on the controller. Built and verified end to end against real hardware.',
+    details: [
+      'Async SNMP v1 poller reads phase status, ped states, and vehicle/ped calls at ~5 Hz and streams them to the browser over WebSocket, with a connected/degraded/disconnected state machine and non-blocking reconnect so a controller dropping off does not stall the app',
+      'Control path writes vehicle and ped calls back to the controller behind a server-side arm/disarm interlock: calls auto-clear on disarm, disconnect, and shutdown, every write is audited, and the endpoints can require a token',
+      'Ring-and-barrier diagram built from the controller own ring and concurrency config rather than a template, plus a coordination monitor that measures cycle length from the signal stream itself since the unit runs actuated',
+      'Built a virtual NTCIP controller (SNMP agent plus a dual-ring actuated signal engine) so the whole multi-intersection stack runs in Docker Compose without hardware, one container per intersection',
+    ],
+    tags: ['NTCIP 1202', 'SNMP', 'FastAPI', 'asyncio', 'React 19', 'WebSockets', 'Leaflet', 'Docker'],
+    accent: 'blue',
+    github: 'https://github.com/shmucas/ATMS-lite',
+  },
+  {
     id: 'esg-toolkit',
     label: 'AI Agent Orchestration',
     title: 'ESG Toolkit: Agent-Driven Reporting System',
