@@ -1,17 +1,18 @@
 const projects = [
   {
     id: 'atms-lite',
-    label: 'Open Sourced Traffic Signal Management System',
-    title: 'ATMS-lite: Live NTCIP Signal Control',
+    label: 'Traffic Signal Management System',
+    title: 'ATMS-lite: Live Traffic Signal Dashboard',
     description:
-      'A locally hosted Advanced Traffic Management System that talks NTCIP 1202 over SNMP to a physical Q-Free MaxTime 2070 traffic controller on my bench, and scales out to many intersections through lightweight virtual controllers. Phase states, ped signals, and detector calls stream to a live React dashboard, and the dashboard can place calls back on the controller. Built and verified end to end against real hardware.',
+      'A live dashboard that connects directly to a real traffic signal controller on my desk and can scale up to manage many intersections at once. It shows exactly what every signal is doing in real time, lets an operator safely send commands back to the hardware, and now overlays live turn-lane arrows on a satellite view of each intersection. Built and tested end to end against real equipment, not a simulation.',
     details: [
-      'Async SNMP v1 poller reads phase status, ped states, and vehicle/ped calls at ~5 Hz and streams them to the browser over WebSocket, with a connected/degraded/disconnected state machine and non-blocking reconnect so a controller dropping off does not stall the app',
-      'Control path writes vehicle and ped calls back to the controller behind a server-side arm/disarm interlock: calls auto-clear on disarm, disconnect, and shutdown, every write is audited, and the endpoints can require a token',
-      'Ring-and-barrier diagram built from the controller own ring and concurrency config rather than a template, plus a coordination monitor that measures cycle length from the signal stream itself since the unit runs actuated',
-      'Built a virtual NTCIP controller (SNMP agent plus a dual-ring actuated signal engine) so the whole multi-intersection stack runs in Docker Compose without hardware, one container per intersection',
+      'Streams live signal status (traffic signals, walk signals, vehicle/pedestrian calls) from the physical controller to the browser in real time, with automatic recovery if a controller drops offline',
+      'Lets an operator safely send commands back to the traffic signal, with built-in guardrails so nothing can get stuck in an unsafe state',
+      'Visualizes exactly how each intersection is timed and coordinated, pulled live from the controller rather than a static plan',
+      'Simulates additional intersections in software so the whole system can be demoed, tested, and scaled without needing more physical hardware',
+      'Shows each lane’s turn arrows (left/through/right), color-coded to the live signal, on a satellite view of the intersection, and can be dragged and rotated to line up with the real road',
     ],
-    tags: ['NTCIP 1202', 'SNMP', 'FastAPI', 'asyncio', 'React 19', 'WebSockets', 'Leaflet', 'Docker'],
+    tags: ['Full-Stack Engineering', 'Real-Time Systems', 'Hardware Integration', 'React', 'Python', 'Live Dashboards', 'Docker'],
     accent: 'blue',
     github: 'https://github.com/shmucas/ATMS-lite',
   },
