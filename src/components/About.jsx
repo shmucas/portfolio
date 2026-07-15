@@ -61,7 +61,7 @@ export default function About() {
                 <p className="mono-label mb-3">Education</p>
                 <p className="text-slate-200 text-sm font-medium">Georgia Institute of Technology</p>
                 <p className="text-slate-400 text-sm">B.S. Civil Engineering</p>
-                <p className="text-slate-500 text-xs font-mono mt-1">2018 – 2021 · GPA 3.31</p>
+                <p className="text-slate-500 text-xs font-mono mt-1">2018 – 2021</p>
               </div>
             </div>
           </div>
