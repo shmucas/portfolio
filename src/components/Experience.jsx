@@ -6,9 +6,9 @@ const jobs = [
     location: 'Atlanta, GA',
     current: true,
     bullets: [
-      "Lead deployment and optimization of NoTraffic's AI-driven adaptive signal control algorithms across major municipalities, including Phoenix, Topeka, Missouri City, Naples, and Montreal.",
+      "Own the full deployment lifecycle for AI-driven adaptive signal control across 5 major municipalities (Phoenix, Topeka, Missouri City, Naples, Montreal): from stakeholder requirements gathering through simulation-based validation to live go-live and post-launch tuning.",
       'Configure and tune AI traffic signal control models across national corridors, using live performance data to iteratively adjust algorithm parameters, reducing intersection delay by up to 30% and travel time by 10%.',
-      'Serve as the primary liaison between the R&D team in Israel and U.S. field operations, translating real-world traffic engineering requirements into AI model tuning and algorithm improvements for the optimization platform.',
+      'Act as the forward-deployed technical lead between R&D (Israel) and U.S. customers, translating field constraints and agency requirements into product and algorithm changes that ship.',
       'Manage and maintain 72+ signalized intersections nationwide on the NoTraffic AI optimization platform, monitoring model performance, troubleshooting algorithm behavior, and training agency staff.',
       'Architected custom Model Context Protocol (MCP) server endpoints to securely bridge LLMs with private BI databases, fully automating ESG report generation and cutting a 12-hour manual process to under 1 hour.',
     ],
@@ -21,7 +21,7 @@ const jobs = [
     location: 'Atlanta, GA',
     bullets: [
       'Led product evaluation and system design for the Q-Free Urban traffic management platform supporting statewide deployments for Georgia DOT and North Carolina DOT.',
-      'Delivered technical sales presentations and product demonstrations to public agencies, contributing to statewide controller management software deployment.',
+      'Ran technical pre-sales demos and product evaluations for public agency stakeholders, directly supporting statewide platform adoption across Georgia DOT and North Carolina DOT.',
       'Directed User Acceptance Testing (UAT) for major deployments: City of Laval, City of Dallas TX, and North Carolina DOT.',
       'Served as engineering lead for adaptive traffic control deployments in Boulder, CO and Conway, AR.',
     ],
