@@ -10,7 +10,7 @@ const jobs = [
       'Configure and tune AI traffic signal control models across national corridors, using live performance data to iteratively adjust algorithm parameters, reducing intersection delay by up to 30% and travel time by 10%.',
       'Serve as the primary liaison between the R&D team in Israel and U.S. field operations, translating real-world traffic engineering requirements into AI model tuning and algorithm improvements for the optimization platform.',
       'Manage and maintain 72+ signalized intersections nationwide on the NoTraffic AI optimization platform, monitoring model performance, troubleshooting algorithm behavior, and training agency staff.',
-      'Architected a multi-agent AI system using Claude Code, local LLMs, and a custom Metabase MCP server to fully automate ESG report generation end-to-end, cutting a 12-hour manual process to under 1 hour.',
+      'Architected custom Model Context Protocol (MCP) server endpoints to securely bridge LLMs with private BI databases, fully automating ESG report generation and cutting a 12-hour manual process to under 1 hour.',
     ],
     tags: ['SUMO Microsimulation', 'AI Implementation', 'Bash Scripts', 'Python', 'Project Delivery', 'AI Agents', 'MCP'],
   },
