@@ -18,8 +18,8 @@ export default function About() {
             <p className="text-neutral-300 text-lg leading-relaxed">
               I'm a Signal Optimization Engineer at{' '}
               <span className="text-neutral-100 font-medium">NoTraffic</span>, a Series C AI
-              mobility startup. I take our adaptive signal control from simulation to live
-              traffic and own every step in between.
+              mobility startup. I take AI into traffic signals, from simulation to live
+              traffic, and own every step in between.
             </p>
             <p className="text-neutral-400 leading-relaxed">
               Day to day that means running stakeholder workshops to turn operational pain
