@@ -6,3 +6,4 @@ dist
 DSCF4213-original.jpg
 DSCF4596-original.jpg
 .env*
+*.env
