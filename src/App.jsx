@@ -5,6 +5,7 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Volunteer from './components/Volunteer'
+import Now from './components/Now'
 import Footer from './components/Footer'
 import { Analytics } from '@vercel/analytics/react'
 
@@ -20,6 +21,7 @@ export default function App() {
         <Projects />
         <Skills />
         <Volunteer />
+        <Now />
       </main>
       <Footer />
     </div>
