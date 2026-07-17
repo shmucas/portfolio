@@ -21,10 +21,7 @@ export default async function handler(req, res) {
         refresh_token: SPOTIFY_REFRESH_TOKEN,
       }),
     })
-    if (!tokenRes.ok) {
-      const body = await tokenRes.text()
-      throw new Error(`Token refresh failed: ${tokenRes.status} ${body}`)
-    }
+    if (!tokenRes.ok) throw new Error(`Token refresh failed: ${tokenRes.status}`)
     const { access_token } = await tokenRes.json()
 
     const topRes = await fetch(TOP_TRACKS_URL, {
