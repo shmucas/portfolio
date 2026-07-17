@@ -12,7 +12,7 @@
   }
 
   ::selection {
-    @apply bg-neutral-700 text-neutral-100;
+    @apply bg-amber-400/30 text-amber-100;
   }
 
   ::-webkit-scrollbar {
@@ -34,6 +34,6 @@
 
 @layer utilities {
   .mono-label {
-    @apply font-mono text-xs tracking-widest uppercase text-neutral-500;
+    @apply font-mono text-xs tracking-widest uppercase text-amber-400;
   }
 }

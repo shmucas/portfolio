@@ -62,7 +62,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-x-6 gap-y-6">
               {stats.map((s) => (
                 <div key={s.label}>
-                  <div className="text-2xl font-bold text-neutral-100 font-mono mb-1">{s.value}</div>
+                  <div className="text-2xl font-bold text-amber-400 font-mono mb-1">{s.value}</div>
                   <div className="text-xs text-neutral-500 leading-tight">{s.label}</div>
                 </div>
               ))}

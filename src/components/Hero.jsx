@@ -45,8 +45,16 @@ const socialLinks = [
 export default function Hero() {
   return (
     <section id="top">
-      <div className="max-w-5xl mx-auto px-6 pt-36 pb-24 flex flex-col md:flex-row md:items-center gap-12 md:gap-16">
-        <div className="flex-1">
+      <div className="max-w-5xl mx-auto px-6 pt-36 pb-24">
+        <div>
+          <img
+            src="/avatar.jpg"
+            alt="Lucas Ferreira"
+            width="320"
+            height="320"
+            className="w-20 h-20 rounded-full object-cover mb-8"
+          />
+
           <p className="mono-label mb-4">Signal Optimization Engineer · NoTraffic</p>
 
           <h1 className="text-5xl sm:text-6xl font-bold text-neutral-50 tracking-tight leading-none mb-2">
@@ -73,7 +81,7 @@ export default function Hero() {
                 href={link.href}
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noopener noreferrer' : undefined}
-                className="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-100 transition-colors duration-150 font-mono text-xs tracking-wider"
+                className="inline-flex items-center gap-2 text-neutral-400 hover:text-amber-400 transition-colors duration-150 font-mono text-xs tracking-wider"
               >
                 {link.icon}
                 {link.label}
@@ -81,7 +89,7 @@ export default function Hero() {
             ))}
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-neutral-200 hover:text-white transition-colors duration-150 font-mono text-xs tracking-wider"
+              className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors duration-150 font-mono text-xs tracking-wider"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -91,14 +99,6 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
-        <img
-          src="/portrait.jpg"
-          alt="Lucas Ferreira"
-          width="720"
-          height="900"
-          className="w-48 md:w-64 lg:w-72 aspect-[4/5] object-cover rounded-lg flex-shrink-0 border border-neutral-800 grayscale hover:grayscale-0 transition-[filter] duration-500"
-        />
       </div>
     </section>
   )

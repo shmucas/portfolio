@@ -28,7 +28,7 @@ export default function Volunteer() {
             {roles.map((r) => (
               <div key={r.org}>
                 <h3 className="text-neutral-200 font-medium text-sm">{r.org}</h3>
-                <p className="text-neutral-400 text-xs font-mono mt-0.5">{r.role}</p>
+                <p className="text-amber-400/90 text-xs font-mono mt-0.5">{r.role}</p>
                 <p className="text-neutral-600 text-xs font-mono mt-0.5 mb-3">{r.sub}</p>
                 <p className="text-neutral-400 text-sm leading-relaxed">{r.description}</p>
               </div>

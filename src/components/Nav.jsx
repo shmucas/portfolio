@@ -27,7 +27,7 @@ export default function Nav() {
           href="#top"
           className="text-sm font-medium text-neutral-200 hover:text-neutral-100 transition-colors tracking-tight"
         >
-          Lucas Ferreira<span className="text-neutral-500">.</span>
+          Lucas Ferreira<span className="text-amber-400">.</span>
         </a>
 
         {/* Desktop links */}

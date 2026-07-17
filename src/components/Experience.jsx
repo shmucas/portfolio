@@ -69,7 +69,7 @@ export default function Experience() {
                   {/* Timeline dot */}
                   <div
                     className={`absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full -translate-x-[4px] hidden md:block ${
-                      job.current ? 'bg-neutral-200' : 'bg-neutral-600'
+                      job.current ? 'bg-amber-400' : 'bg-neutral-600'
                     }`}
                   />
 
@@ -78,7 +78,7 @@ export default function Experience() {
                       <div className="flex items-center gap-2">
                         <h3 className="text-neutral-100 font-semibold text-base">{job.company}</h3>
                         {job.current && (
-                          <span className="font-mono text-[10px] tracking-wider uppercase px-1.5 py-0.5 border border-neutral-700 text-neutral-300 rounded">
+                          <span className="font-mono text-[10px] tracking-wider uppercase px-1.5 py-0.5 border border-amber-400/30 text-amber-400 rounded">
                             Current
                           </span>
                         )}
