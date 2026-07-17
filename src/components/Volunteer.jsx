@@ -19,7 +19,7 @@ const roles = [
 
 export default function Volunteer() {
   return (
-    <section id="volunteer" className="py-24 border-t border-neutral-800/60">
+    <section id="volunteer" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
       <div className="max-w-5xl mx-auto px-6">
         <div>
           <SectionHeading eyebrow="Community" title="Outside the day job." />

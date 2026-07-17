@@ -79,7 +79,7 @@ const languages = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 border-t border-neutral-800/60">
+    <section id="skills" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
       <div className="max-w-5xl mx-auto px-6">
         <SectionHeading eyebrow="Skills" title="The toolbox." />
 

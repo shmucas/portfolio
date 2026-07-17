@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="border-t border-neutral-800/60 py-16"
+      className="border-t border-neutral-800/60 py-16 scroll-mt-14"
     >
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid sm:grid-cols-2 gap-10 mb-12">

@@ -54,7 +54,7 @@ const jobs = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 border-t border-neutral-800/60">
+    <section id="experience" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
       <div className="max-w-5xl mx-auto px-6">
         <div>
           <SectionHeading eyebrow="Experience" title="Where I've shipped." />

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import SectionHeading from './SectionHeading'
 
 const projects = [
@@ -16,6 +17,12 @@ const projects = [
     ],
     tags: ['Full-Stack Engineering', 'Real-Time Systems', 'Hardware Integration', 'React', 'Python', 'Postgres', 'ATSPM', 'Live Dashboards', 'Docker'],
     github: 'https://github.com/shmucas/ATMS-lite',
+    demo: {
+      src: '/atms-demo.mp4',
+      poster: '/atms-demo-poster.jpg',
+      caption:
+        'Four virtual controllers polled over SNMP · live ring-and-barrier status · 42nd St corridor time-space diagram · ATSPM split monitor',
+    },
   },
   {
     id: 'virtual-traffic-simulation',
@@ -48,8 +55,23 @@ const projects = [
 ]
 
 export default function Projects() {
+  const [demo, setDemo] = useState(null)
+
+  useEffect(() => {
+    if (!demo) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') setDemo(null)
+    }
+    window.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [demo])
+
   return (
-    <section id="projects" className="py-24 border-t border-neutral-800/60">
+    <section id="projects" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
       <div className="max-w-5xl mx-auto px-6">
         <div>
           <SectionHeading eyebrow="Projects" title="Things I've built to prove it." />
@@ -65,20 +87,30 @@ export default function Projects() {
                     {project.label}
                   </span>
 
-                  {project.github ? (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-mono text-[10px] text-neutral-400 tracking-wider hover:text-neutral-100 transition-colors"
-                    >
-                      GitHub ↗
-                    </a>
-                  ) : (
-                    <span className="font-mono text-[10px] text-neutral-600 tracking-wider">
-                      Private
-                    </span>
-                  )}
+                  <div className="flex items-center gap-4">
+                    {project.demo && (
+                      <button
+                        onClick={() => setDemo(project)}
+                        className="font-mono text-[10px] tracking-wider text-amber-400 hover:text-amber-300 transition-colors"
+                      >
+                        ▶ Live demo
+                      </button>
+                    )}
+                    {project.github ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-[10px] text-neutral-400 tracking-wider hover:text-neutral-100 transition-colors"
+                      >
+                        GitHub ↗
+                      </a>
+                    ) : (
+                      <span className="font-mono text-[10px] text-neutral-600 tracking-wider">
+                        Private
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <h3 className="text-neutral-100 font-semibold text-base mb-2 leading-snug">
@@ -106,6 +138,48 @@ export default function Projects() {
           </div>
         </div>
       </div>
+
+      {demo && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-8 bg-black/85 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${demo.title} demo`}
+          onClick={() => setDemo(null)}
+        >
+          <div className="w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between mb-3">
+              <p className="font-mono text-xs tracking-wider text-neutral-300">{demo.title}</p>
+              <button
+                onClick={() => setDemo(null)}
+                aria-label="Close demo"
+                className="font-mono text-neutral-400 hover:text-neutral-100 transition-colors text-xl leading-none px-2"
+              >
+                ×
+              </button>
+            </div>
+            <video
+              ref={(el) => {
+                if (el) {
+                  el.muted = true
+                  el.play().catch(() => {})
+                }
+              }}
+              src={demo.demo.src}
+              poster={demo.demo.poster}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+              className="w-full rounded-lg border border-neutral-800"
+            />
+            <p className="mt-3 font-mono text-[11px] tracking-wider text-neutral-500">
+              {demo.demo.caption}
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
