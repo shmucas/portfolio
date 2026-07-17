@@ -97,7 +97,7 @@ export default function Hero() {
           alt="Lucas Ferreira"
           width="720"
           height="900"
-          className="w-48 md:w-64 lg:w-72 aspect-[4/5] object-cover rounded-lg flex-shrink-0"
+          className="w-48 md:w-64 lg:w-72 aspect-[4/5] object-cover rounded-lg flex-shrink-0 border border-neutral-800 grayscale hover:grayscale-0 transition-[filter] duration-500"
         />
       </div>
     </section>
