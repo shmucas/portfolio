@@ -49,16 +49,19 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 border-t border-slate-800/60">
+    <section id="projects" className="py-24 border-t border-neutral-800/60">
       <div className="max-w-5xl mx-auto px-6">
         <div>
           <SectionHeading eyebrow="Projects" title="Things I've built to prove it." />
 
-          <div className="grid sm:grid-cols-2 gap-x-12 gap-y-14">
+          <div className="grid sm:grid-cols-2 gap-5">
             {projects.map((project) => (
-              <div key={project.id}>
+              <div
+                key={project.id}
+                className="border border-neutral-800 bg-neutral-900/40 rounded-lg p-6 hover:border-neutral-700 transition-colors duration-200"
+              >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[10px] tracking-widest uppercase text-slate-500">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-neutral-500">
                     {project.label}
                   </span>
 
@@ -67,35 +70,35 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-mono text-[10px] text-slate-400 tracking-wider hover:text-blue-400 transition-colors"
+                      className="font-mono text-[10px] text-neutral-400 tracking-wider hover:text-neutral-100 transition-colors"
                     >
                       GitHub ↗
                     </a>
                   ) : (
-                    <span className="font-mono text-[10px] text-slate-600 tracking-wider">
+                    <span className="font-mono text-[10px] text-neutral-600 tracking-wider">
                       Private
                     </span>
                   )}
                 </div>
 
-                <h3 className="text-slate-100 font-semibold text-base mb-2 leading-snug">
+                <h3 className="text-neutral-100 font-semibold text-base mb-2 leading-snug">
                   {project.title}
                 </h3>
 
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                <p className="text-neutral-300 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
 
                 <ul className="space-y-1.5 mb-4">
                   {project.details.map((d, i) => (
-                    <li key={i} className="flex items-start gap-2 text-slate-500 text-xs leading-relaxed">
-                      <span className="w-1 h-1 rounded-full bg-slate-600 mt-1.5 flex-shrink-0" />
+                    <li key={i} className="flex items-start gap-2 text-neutral-400 text-xs leading-relaxed">
+                      <span className="w-1 h-1 rounded-full bg-neutral-600 mt-1.5 flex-shrink-0" />
                       {d}
                     </li>
                   ))}
                 </ul>
 
-                <p className="font-mono text-[11px] tracking-wider text-slate-600">
+                <p className="font-mono text-[11px] tracking-wider text-neutral-500">
                   {project.tags.join(' · ')}
                 </p>
               </div>

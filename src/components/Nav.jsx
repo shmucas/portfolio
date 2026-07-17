@@ -20,14 +20,14 @@ export default function Nav() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-slate-950 border-b border-slate-800"
+      className="fixed top-0 left-0 right-0 z-50 bg-neutral-950 border-b border-neutral-800"
     >
       <nav className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <a
           href="#top"
-          className="text-sm font-medium text-slate-200 hover:text-blue-400 transition-colors tracking-tight"
+          className="text-sm font-medium text-neutral-200 hover:text-neutral-100 transition-colors tracking-tight"
         >
-          Lucas Ferreira<span className="text-blue-400">.</span>
+          Lucas Ferreira<span className="text-neutral-500">.</span>
         </a>
 
         {/* Desktop links */}
@@ -36,7 +36,7 @@ export default function Nav() {
             <a
               key={l.href}
               href={l.href}
-              className="font-mono text-xs tracking-widest uppercase text-slate-400 hover:text-slate-100 transition-colors duration-150"
+              className="font-mono text-xs tracking-widest uppercase text-neutral-400 hover:text-neutral-100 transition-colors duration-150"
             >
               {l.label}
             </a>
@@ -45,7 +45,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 text-slate-400 hover:text-slate-100 transition-colors"
+          className="md:hidden p-2 text-neutral-400 hover:text-neutral-100 transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -69,13 +69,13 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-slate-950/95 backdrop-blur-md border-b border-slate-800 px-6 py-4">
+        <div className="md:hidden bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800 px-6 py-4">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="block font-mono text-xs tracking-widest uppercase text-slate-400 hover:text-slate-100 py-2.5 transition-colors"
+              className="block font-mono text-xs tracking-widest uppercase text-neutral-400 hover:text-neutral-100 py-2.5 transition-colors"
             >
               {l.label}
             </a>

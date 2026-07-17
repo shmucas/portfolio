@@ -19,7 +19,7 @@ const roles = [
 
 export default function Volunteer() {
   return (
-    <section id="volunteer" className="py-24 border-t border-slate-800/60">
+    <section id="volunteer" className="py-24 border-t border-neutral-800/60">
       <div className="max-w-5xl mx-auto px-6">
         <div>
           <SectionHeading eyebrow="Community" title="Outside the day job." />
@@ -27,10 +27,10 @@ export default function Volunteer() {
           <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
             {roles.map((r) => (
               <div key={r.org}>
-                <h3 className="text-slate-200 font-medium text-sm">{r.org}</h3>
-                <p className="text-blue-400/80 text-xs font-mono mt-0.5">{r.role}</p>
-                <p className="text-slate-600 text-xs font-mono mt-0.5 mb-3">{r.sub}</p>
-                <p className="text-slate-400 text-sm leading-relaxed">{r.description}</p>
+                <h3 className="text-neutral-200 font-medium text-sm">{r.org}</h3>
+                <p className="text-neutral-400 text-xs font-mono mt-0.5">{r.role}</p>
+                <p className="text-neutral-600 text-xs font-mono mt-0.5 mb-3">{r.sub}</p>
+                <p className="text-neutral-400 text-sm leading-relaxed">{r.description}</p>
               </div>
             ))}
           </div>

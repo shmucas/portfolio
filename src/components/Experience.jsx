@@ -54,14 +54,14 @@ const jobs = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 border-t border-slate-800/60">
+    <section id="experience" className="py-24 border-t border-neutral-800/60">
       <div className="max-w-5xl mx-auto px-6">
         <div>
           <SectionHeading eyebrow="Experience" title="Where I've shipped." />
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 top-2 bottom-2 w-px bg-slate-700 hidden md:block" />
+            <div className="absolute left-0 top-2 bottom-2 w-px bg-neutral-700 hidden md:block" />
 
             <div className="space-y-10">
               {jobs.map((job, i) => (
@@ -69,38 +69,38 @@ export default function Experience() {
                   {/* Timeline dot */}
                   <div
                     className={`absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full -translate-x-[4px] hidden md:block ${
-                      job.current ? 'bg-blue-400' : 'bg-slate-600'
+                      job.current ? 'bg-neutral-200' : 'bg-neutral-600'
                     }`}
                   />
 
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                     <div>
                       <div className="flex items-center gap-2">
-                        <h3 className="text-slate-100 font-semibold text-base">{job.company}</h3>
+                        <h3 className="text-neutral-100 font-semibold text-base">{job.company}</h3>
                         {job.current && (
-                          <span className="font-mono text-[10px] tracking-wider uppercase px-1.5 py-0.5 bg-blue-500/10 border border-blue-500/25 text-blue-400 rounded">
+                          <span className="font-mono text-[10px] tracking-wider uppercase px-1.5 py-0.5 border border-neutral-700 text-neutral-300 rounded">
                             Current
                           </span>
                         )}
                       </div>
-                      <p className="text-slate-400 text-sm">{job.role}</p>
+                      <p className="text-neutral-400 text-sm">{job.role}</p>
                     </div>
                     <div className="text-right flex-shrink-0">
-                      <p className="font-mono text-xs text-slate-500">{job.period}</p>
-                      <p className="font-mono text-xs text-slate-600">{job.location}</p>
+                      <p className="font-mono text-xs text-neutral-500">{job.period}</p>
+                      <p className="font-mono text-xs text-neutral-600">{job.location}</p>
                     </div>
                   </div>
 
                   <ul className="space-y-2 mb-3">
                     {job.bullets.map((b, j) => (
-                      <li key={j} className="text-slate-400 text-sm leading-relaxed flex gap-2">
-                        <span className="text-slate-600 mt-1.5 flex-shrink-0">›</span>
+                      <li key={j} className="text-neutral-400 text-sm leading-relaxed flex gap-2">
+                        <span className="text-neutral-600 mt-1.5 flex-shrink-0">›</span>
                         <span>{b}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <p className="font-mono text-[11px] tracking-wider text-slate-600">
+                  <p className="font-mono text-[11px] tracking-wider text-neutral-500">
                     {job.tags.join(' · ')}
                   </p>
                 </div>

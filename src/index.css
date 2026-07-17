@@ -8,11 +8,11 @@
   }
 
   body {
-    @apply bg-slate-950 text-slate-100 font-sans antialiased;
+    @apply bg-neutral-950 text-neutral-100 font-sans antialiased;
   }
 
   ::selection {
-    @apply bg-blue-500/30 text-blue-100;
+    @apply bg-neutral-700 text-neutral-100;
   }
 
   ::-webkit-scrollbar {
@@ -20,20 +20,20 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-slate-950;
+    @apply bg-neutral-950;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-700 rounded-full;
+    @apply bg-neutral-700 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-600;
+    @apply bg-neutral-600;
   }
 }
 
 @layer utilities {
   .mono-label {
-    @apply font-mono text-xs tracking-widest uppercase text-blue-400;
+    @apply font-mono text-xs tracking-widest uppercase text-neutral-500;
   }
 }

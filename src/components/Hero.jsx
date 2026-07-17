@@ -45,24 +45,25 @@ const socialLinks = [
 export default function Hero() {
   return (
     <section id="top">
-      <div className="max-w-5xl mx-auto px-6 pt-36 pb-24">
+      <div className="max-w-5xl mx-auto px-6 pt-36 pb-24 flex flex-col md:flex-row md:items-center gap-12 md:gap-16">
+        <div className="flex-1">
           <p className="mono-label mb-4">Signal Optimization Engineer · NoTraffic</p>
 
-          <h1 className="text-5xl sm:text-6xl font-bold text-slate-50 tracking-tight leading-none mb-2">
+          <h1 className="text-5xl sm:text-6xl font-bold text-neutral-50 tracking-tight leading-none mb-2">
             Lucas Ferreira, PE
           </h1>
-          <p className="font-mono text-xs text-slate-600 mb-6">Licensed Professional Engineer · Georgia · #PE054784</p>
+          <p className="font-mono text-xs text-neutral-600 mb-6">Licensed Professional Engineer · Georgia · #PE054784</p>
 
-          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl text-neutral-300 max-w-2xl leading-relaxed mb-8">
             I put AI traffic management systems on real streets: 72+ intersections
             across the US and Canada, from simulation to go-live to measured results.
           </p>
 
-          <div className="flex items-center gap-2 mb-8 text-slate-500">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-blue-400/70">
+          <div className="flex items-center gap-2 mb-8 text-neutral-500">
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-neutral-500">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
             </svg>
-            <span className="font-mono text-xs tracking-wider text-slate-400">Atlanta, GA</span>
+            <span className="font-mono text-xs tracking-wider text-neutral-400">Atlanta, GA</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -72,7 +73,7 @@ export default function Hero() {
                 href={link.href}
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noopener noreferrer' : undefined}
-                className="inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors duration-150 font-mono text-xs tracking-wider"
+                className="inline-flex items-center gap-2 text-neutral-400 hover:text-neutral-100 transition-colors duration-150 font-mono text-xs tracking-wider"
               >
                 {link.icon}
                 {link.label}
@@ -80,7 +81,7 @@ export default function Hero() {
             ))}
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-150 font-mono text-xs tracking-wider"
+              className="inline-flex items-center gap-2 text-neutral-200 hover:text-white transition-colors duration-150 font-mono text-xs tracking-wider"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -89,6 +90,15 @@ export default function Hero() {
               Contact
             </a>
           </div>
+        </div>
+
+        <img
+          src="/portrait.jpg"
+          alt="Lucas Ferreira"
+          width="720"
+          height="900"
+          className="w-48 md:w-64 lg:w-72 aspect-[4/5] object-cover rounded-lg flex-shrink-0"
+        />
       </div>
     </section>
   )

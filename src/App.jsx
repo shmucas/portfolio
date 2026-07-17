@@ -10,7 +10,7 @@ import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-neutral-950">
       <Analytics />
       <Nav />
       <main>
