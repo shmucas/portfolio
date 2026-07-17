@@ -48,10 +48,12 @@ export default function About() {
             <div className="pt-4">
               <p className="mono-label mb-3">Off the clock</p>
               <p className="text-slate-400 leading-relaxed">
-                Brazilian by birth, raised in Maine, home in Atlanta since 2012. Outside of
-                work I run, play soccer and chess, sketch, and take my camera anywhere worth
-                the trip. The overlap between creative and analytical thinking is what
-                pulled me into engineering, and it still keeps me sharp.
+                Brazilian by birth, raised in Maine, home in Atlanta since 2012. I'm a maker
+                at heart: I like hardware projects and there's usually a microcontroller and
+                a soldering iron on my desk. Outside of that I run, play soccer and chess,
+                sketch, and take my camera anywhere worth the trip. The overlap between
+                creative and analytical thinking is what pulled me into engineering, and it
+                still keeps me sharp.
               </p>
             </div>
           </div>
