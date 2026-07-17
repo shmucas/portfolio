@@ -1,3 +1,5 @@
+import SectionHeading from './SectionHeading'
+
 const roles = [
   {
     org: 'Society of St. Vincent de Paul',
@@ -18,7 +20,7 @@ const roles = [
     role: 'Alumni Board President',
     sub: 'Alpha Tau Omega · Georgia Tech',
     description:
-      'Promoted to president of the non-profit alumni board organization. In charge of supporting chapter leadership ad hoc, managing the endowment, and facilitating chapter scholarships on behalf of the ATO Foundation.',
+      'Promoted from treasurer to president of the non-profit alumni board. I manage the endowment, advise active chapter leadership, and administer scholarships on behalf of the ATO Foundation.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
@@ -32,7 +34,7 @@ export default function Volunteer() {
     <section id="volunteer" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
         <div>
-          <p className="mono-label mb-8">Volunteer</p>
+          <SectionHeading eyebrow="Community" title="Outside the day job." />
 
           <div className="grid sm:grid-cols-2 gap-4">
             {roles.map((r) => (

@@ -28,7 +28,7 @@ const socialLinks = [
   },
   {
     label: 'Resume',
-    href: '/Resume.pdf',
+    href: '/Lucas-Ferreira-Resume.pdf',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
@@ -44,10 +44,7 @@ const socialLinks = [
 
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-    >
+    <section id="top" className="relative overflow-hidden">
       {/* Subtle dot-grid texture */}
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full"
@@ -61,16 +58,18 @@ export default function Hero() {
         <rect width="100%" height="100%" fill="url(#dot-grid)" />
       </svg>
 
-      <div className="relative max-w-5xl mx-auto px-6 pt-24 pb-16">
-          <p className="mono-label mb-4">Signal Optimization Engineer</p>
+      <div className="relative max-w-5xl mx-auto px-6 pt-36 pb-24">
+          <p className="mono-label mb-4">Signal Optimization Engineer · NoTraffic</p>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-slate-50 tracking-tight leading-none mb-2">
+          <h1 className="text-5xl sm:text-6xl font-bold text-slate-50 tracking-tight leading-none mb-2">
             Lucas Ferreira, PE
           </h1>
           <p className="font-mono text-xs text-slate-600 mb-6">Licensed Professional Engineer · Georgia · #PE054784</p>
 
-          <p className="text-lg sm:text-xl text-slate-400 max-w-xl leading-relaxed mb-8 font-light">
-            Implementing AI into traffic signals.
+          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed mb-8">
+            I put AI signal control on real streets. I own deployments end to end:
+            simulation, go-live, algorithm tuning, and the before/after numbers that
+            prove it worked. 72+ intersections across the US and Canada.
           </p>
 
           <div className="flex items-center gap-2 mb-8 text-slate-500">

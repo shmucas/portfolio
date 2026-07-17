@@ -1,3 +1,5 @@
+import SectionHeading from './SectionHeading'
+
 const jobs = [
   {
     company: 'NoTraffic',
@@ -6,7 +8,7 @@ const jobs = [
     location: 'Atlanta, GA',
     current: true,
     bullets: [
-      "Own the full deployment lifecycle for AI-driven adaptive signal control across 5 major municipalities (Phoenix, Topeka, Missouri City, Naples, Montreal): from stakeholder requirements gathering through simulation-based validation to live go-live and post-launch tuning.",
+      'Own the full deployment lifecycle for AI-driven adaptive signal control across six municipalities (Phoenix, Topeka, Missouri City, West Allis, Naples, Montreal): from stakeholder requirements gathering through simulation-based validation to go-live and post-launch tuning.',
       'Configure and tune AI traffic signal control models across national corridors, using live performance data to iteratively adjust algorithm parameters, reducing intersection delay by up to 30% and travel time by 10%.',
       'Act as the forward-deployed technical lead between R&D (Israel) and U.S. customers, translating field constraints and agency requirements into product and algorithm changes that ship.',
       'Manage and maintain 72+ signalized intersections nationwide on the NoTraffic AI optimization platform, monitoring model performance, troubleshooting algorithm behavior, and training agency staff.',
@@ -25,7 +27,7 @@ const jobs = [
       'Directed User Acceptance Testing (UAT) for major deployments: City of Laval, City of Dallas TX, and North Carolina DOT.',
       'Served as engineering lead for adaptive traffic control deployments in Boulder, CO and Conway, AR.',
     ],
-    tags: ['Sales Engineering', 'UAT', 'Customer Support', 'Azure Cloud Deployment', 'PostGresQl'],
+    tags: ['Sales Engineering', 'UAT', 'Customer Support', 'Azure Cloud Deployment', 'PostgreSQL'],
   },
   {
     company: 'Kimley-Horn',
@@ -55,7 +57,7 @@ export default function Experience() {
     <section id="experience" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
         <div>
-          <p className="mono-label mb-8">Experience</p>
+          <SectionHeading eyebrow="Experience" title="Where I've shipped." />
 
           <div className="relative">
             {/* Timeline line */}

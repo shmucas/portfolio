@@ -1,37 +1,22 @@
+import SectionHeading from './SectionHeading'
+
 const projects = [
   {
     id: 'atms-lite',
     label: 'Traffic Signal Management System',
     title: 'ATMS-lite: Live Traffic Signal Dashboard',
     description:
-      'A live dashboard connected to a real traffic signal controller on my desk, built to scale to many intersections. Shows live signal status, lets an operator send safe commands to the hardware, and now generates ATSPM-style performance reports.',
+      'A live dashboard wired to a real traffic signal controller on my desk. It streams live signal status, lets an operator send safe commands back to the hardware, and generates ATSPM-style performance reports. Built to scale from one intersection to a corridor.',
     details: [
-      'Streams live signal, walk, and call status from the controller, with automatic recovery if it drops offline',
-      'Sends safe commands back to the controller with guardrails against unsafe states',
-      'Shows live timing and coordination, including a corridor time-space diagram',
+      'Streams live signal, walk, and call status over SNMP at ~5 Hz, with automatic recovery if the controller drops offline',
+      'Sends commands back to the hardware with guardrails against unsafe signal states',
       'Captures signal events into Postgres and computes ATSPM-style reports natively, no separate app needed',
-      'Simulates extra intersections in software to test and scale without more hardware',
-      'Overlays turn-lane arrows on a satellite view, color-coded to the live signal',
+      'Renders a corridor time-space diagram and a satellite overlay color-coded to the live signal',
+      'Simulates extra intersections in software to test corridor scale without more hardware',
     ],
     tags: ['Full-Stack Engineering', 'Real-Time Systems', 'Hardware Integration', 'React', 'Python', 'Postgres', 'ATSPM', 'Live Dashboards', 'Docker'],
     accent: 'blue',
     github: 'https://github.com/shmucas/ATMS-lite',
-  },
-  {
-    id: 'esg-toolkit',
-    label: 'AI Agent Orchestration',
-    title: 'ESG Toolkit: Agent-Driven Reporting System',
-    description:
-      'An AI-agent-orchestrated toolkit that turns live signal performance data into standard ESG deliverables. Built as a set of auto-activating Claude Code skills, each encoding a complete analyst workflow (data pull, analysis, charting, and brand-styled document assembly), so the agent recognizes the request, selects the right procedure, and produces a finished .pptx or .docx end-to-end.',
-    details: [
-      'Architected four self-contained Claude Code agent skills (SKILL.md-driven) that auto-activate from natural-language requests and each produce a distinct, client-facing deliverable.',
-      'Wired a custom MCP server into the agent for live SQL querying against an internal BI platform, with a parallel API-key fallback path for resilience.',
-      'Engineered domain logic for peak-hour detection, before/after corridor delay analysis, and intersection performance metrics, with Economist-style chart rendering and credential-safe design (tokens only in environment variables, never committed).',
-      'Added a fourth skill that parses timing plans from different controller database types into an algorithm-ready format for AI traffic management, speeding up project delivery.',
-    ],
-    tags: ['Claude Code', 'AI Agents', 'MCP', 'Python', 'python-pptx', 'python-docx', 'HCM 7th Edition'],
-    accent: 'violet',
-    private: true,
   },
   {
     id: 'virtual-traffic-simulation',
@@ -53,7 +38,7 @@ const projects = [
     label: 'AI Hardware / Voice Assistant',
     title: 'Lulu: AI Desk Companion',
     description:
-      'A physical desk companion built on an ESP32-S3 microcontroller that talks to a Mac backend over WiFi. It listens for voice commands, transcribes and understands them with local AI models, and responds out loud with a personality shown on a small pixel-art face display. Everything runs locally, no cloud APIs.',
+      'A physical desk companion on an ESP32-S3 that talks to a Mac backend over WiFi. It hears a voice command, runs speech-to-text and a local LLM, and answers out loud while a pixel-art face shows what it is doing. Everything runs locally, no cloud APIs.',
     details: [
       'Built the full voice pipeline: microphone capture on the ESP32, speech-to-text, a two-model local LLM setup (one plans actions like setting timers or checking weather, the other holds the conversation and picks an emotion), and text-to-speech spoken back through a small speaker',
       'Designed a pixel-art face on a tiny OLED screen that animates between six expressions (idle, listening, thinking, speaking, etc.) so the device feels alive and shows what it is doing',
@@ -72,13 +57,6 @@ const accentMap = {
     label: 'text-blue-400',
     labelBg: 'bg-blue-500/10 border-blue-500/20',
     dot: 'bg-blue-400',
-  },
-  violet: {
-    border: 'group-hover:border-violet-500/40',
-    top: 'bg-violet-500',
-    label: 'text-violet-400',
-    labelBg: 'bg-violet-500/10 border-violet-500/20',
-    dot: 'bg-violet-400',
   },
   emerald: {
     border: 'group-hover:border-emerald-500/40',
@@ -101,12 +79,7 @@ export default function Projects() {
     <section id="projects" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
         <div>
-          <div className="flex items-end justify-between mb-8">
-            <p className="mono-label">Featured Projects</p>
-            <p className="text-xs text-slate-600 font-mono hidden sm:block">
-              internal tooling · field engineering
-            </p>
-          </div>
+          <SectionHeading eyebrow="Projects" title="Things I've built to prove it." />
 
           <div className="grid sm:grid-cols-2 gap-4">
             {projects.map((project) => {

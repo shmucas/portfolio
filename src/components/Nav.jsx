@@ -25,9 +25,9 @@ export default function Nav() {
       <nav className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <a
           href="#top"
-          className="font-mono text-sm text-slate-300 hover:text-blue-400 transition-colors tracking-tight"
+          className="text-sm font-medium text-slate-200 hover:text-blue-400 transition-colors tracking-tight"
         >
-          lf<span className="text-blue-400">.</span>dev
+          Lucas Ferreira<span className="text-blue-400">.</span>
         </a>
 
         {/* Desktop links */}

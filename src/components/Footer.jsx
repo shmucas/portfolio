@@ -11,8 +11,10 @@ export default function Footer() {
             <h2 className="text-2xl font-semibold text-slate-100 mb-3">
               Let's work together.
             </h2>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Open to conversations about transportation systems, signal optimization, AI for traffic engineering, and the intersection of technical engineering and stakeholder management.
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+              If you're putting AI into the physical world and need someone who can
+              ship production code and sit across from the customer, I'd like to hear
+              from you. Email is fastest.
             </p>
           </div>
 

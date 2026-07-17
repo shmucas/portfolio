@@ -1,3 +1,5 @@
+import SectionHeading from './SectionHeading'
+
 const skillGroups = [
   {
     category: 'Transportation Systems',
@@ -5,47 +7,50 @@ const skillGroups = [
     skills: [
       'Adaptive Signal Control',
       'NTCIP Protocol',
-      'Traffic Signal Controllers (Expert)',
+      'Traffic Signal Controllers',
       'EOS Cobalt Controllers',
       'Traffic Management Systems',
       'Signal Timing & Phasing',
       'ATSPM Analytics',
+      'SUMO Microsimulation',
       'Traffic Impact Studies',
-      'ITS Design'
+      'ITS Design',
     ],
   },
   {
     category: 'AI & Agentic Engineering',
     icon: '◇',
     skills: [
-      'Agentic Engineering (Advanced)',
-      'Ollama / Local LLMs',
+      'Claude Code',
+      'MCP Server Development',
+      'Agent Skill Design',
+      'Multi-Agent Workflows',
+      'Local LLMs (Ollama)',
     ],
   },
   {
-    category: 'Web Development',
+    category: 'Software Engineering',
     icon: '◆',
     skills: [
-      'Python (Advanced)',
-      'JavaScript (Proficient)',
-      'React (Proficient)',
-      'Vite (Proficient)',
-      'FastAPI (Proficient)',
-      'REST APIs (Advanced)',
-      'WebSockets (Proficient)',
-      'PostgreSQL (Proficient)',
-      'MySQL (Proficient)',
+      'Python',
+      'JavaScript',
+      'React',
+      'FastAPI',
+      'REST APIs',
+      'WebSockets',
+      'PostgreSQL',
+      'MySQL',
+      'Bash / Shell Scripting',
     ],
   },
   {
-    category: 'General Tools',
+    category: 'Hardware & Embedded',
     icon: '◐',
     skills: [
-      'Bash / Shell Scripting (Advanced)',
-      'Git / GitHub',
-      'AutoCAD / Civil 3D',
-      'Embedded Systems (RPi5, ESP32, Arduino)',
+      'ESP32 / Arduino / RPi5',
+      'SNMP Hardware Polling',
       'I2S Audio Programming',
+      'AutoCAD / Civil 3D',
     ],
   },
   {
@@ -62,9 +67,9 @@ const skillGroups = [
     category: 'Infrastructure & Operations',
     icon: '◎',
     skills: [
-      'Microsoft Azure (Proficient)',
-      'Kubernetes (Proficient)',
-      'Docker (Proficient)',
+      'Microsoft Azure',
+      'Kubernetes',
+      'Docker',
       'Linux (Ubuntu)',
       'Agency Training',
       'Technical Documentation',
@@ -77,7 +82,7 @@ export default function Skills() {
     <section id="skills" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
         <div>
-          <p className="mono-label mb-8">Skills</p>
+          <SectionHeading eyebrow="Skills" title="The toolbox." />
 
           <div className="grid sm:grid-cols-2 gap-6">
             {skillGroups.map((group) => (
@@ -104,7 +109,7 @@ export default function Skills() {
           </div>
 
           {/* Languages */}
-          <div className="mt-6 bg-slate-900/50 border border-slate-800 rounded-xl p-5">
+          <div className="mt-6 bg-slate-900 border border-slate-800 rounded-lg p-5">
             <div className="flex items-center gap-2 mb-3">
               <span className="text-blue-400/60 text-sm font-mono">◌</span>
               <h3 className="text-slate-300 text-sm font-medium">Languages</h3>
