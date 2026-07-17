@@ -15,7 +15,6 @@ const projects = [
       'Simulates extra intersections in software to test corridor scale without more hardware',
     ],
     tags: ['Full-Stack Engineering', 'Real-Time Systems', 'Hardware Integration', 'React', 'Python', 'Postgres', 'ATSPM', 'Live Dashboards', 'Docker'],
-    accent: 'blue',
     github: 'https://github.com/shmucas/ATMS-lite',
   },
   {
@@ -30,7 +29,6 @@ const projects = [
       'Robertson platoon dispersion model propagates arrival profiles between intersections and renders a time-space diagram',
     ],
     tags: ['NTCIP', 'HCM 7th Edition', 'React', 'Python', 'FastAPI', 'SQLite'],
-    accent: 'emerald',
     github: 'https://github.com/shmucas/trafficsim',
   },
   {
@@ -45,34 +43,9 @@ const projects = [
       'Added practical features on top: persistent memory so it remembers facts about the user, timers and reminders that speak up on their own, and a push-to-talk button for reliable activation',
     ],
     tags: ['ESP32-S3', 'Python', 'FastAPI', 'WebSockets', 'Ollama', 'Local LLMs', 'faster-whisper', 'Piper TTS', 'Arduino/PlatformIO'],
-    accent: 'amber',
     github: 'https://github.com/shmucas/lulu.ai-desk-companion',
   }
 ]
-
-const accentMap = {
-  blue: {
-    border: 'group-hover:border-blue-500/40',
-    top: 'bg-blue-500',
-    label: 'text-blue-400',
-    labelBg: 'bg-blue-500/10 border-blue-500/20',
-    dot: 'bg-blue-400',
-  },
-  emerald: {
-    border: 'group-hover:border-emerald-500/40',
-    top: 'bg-emerald-500',
-    label: 'text-emerald-400',
-    labelBg: 'bg-emerald-500/10 border-emerald-500/20',
-    dot: 'bg-emerald-400',
-  },
-  amber: {
-    border: 'group-hover:border-amber-500/40',
-    top: 'bg-amber-500',
-    label: 'text-amber-400',
-    labelBg: 'bg-amber-500/10 border-amber-500/20',
-    dot: 'bg-amber-400',
-  },
-}
 
 export default function Projects() {
   return (
@@ -81,71 +54,52 @@ export default function Projects() {
         <div>
           <SectionHeading eyebrow="Projects" title="Things I've built to prove it." />
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            {projects.map((project) => {
-              const a = accentMap[project.accent]
-              return (
-                <div
-                  key={project.id}
-                  className={`group relative bg-slate-900 border border-slate-800 rounded-lg overflow-hidden ${a.border} transition-colors duration-200`}
-                >
-                  <div className={`h-0.5 w-full ${a.top} opacity-60 group-hover:opacity-100 transition-opacity`} />
+          <div className="grid sm:grid-cols-2 gap-x-12 gap-y-14">
+            {projects.map((project) => (
+              <div key={project.id}>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-slate-500">
+                    {project.label}
+                  </span>
 
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span
-                        className={`font-mono text-[10px] tracking-widest uppercase px-2 py-0.5 rounded border ${a.labelBg} ${a.label}`}
-                      >
-                        {project.label}
-                      </span>
-
-                      {project.github ? (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-mono text-[10px] text-slate-400 tracking-wider hover:text-white transition-colors"
-                        >
-                          GitHub ↗
-                        </a>
-                      ) : (
-                        <span className="font-mono text-[10px] text-slate-600 tracking-wider">
-                          Private
-                        </span>
-                      )}
-                    </div>
-
-                    <h3 className="text-slate-100 font-semibold text-base mb-2 leading-snug">
-                      {project.title}
-                    </h3>
-
-                    <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                      {project.description}
-                    </p>
-
-                    <ul className="space-y-1.5 mb-4">
-                      {project.details.map((d, i) => (
-                        <li key={i} className="flex items-start gap-2 text-slate-500 text-xs leading-relaxed">
-                          <span className={`w-1 h-1 rounded-full ${a.dot} mt-1.5 flex-shrink-0`} />
-                          {d}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="font-mono text-[10px] tracking-wide px-2 py-0.5 bg-slate-800/60 border border-slate-700/50 text-slate-500 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-[10px] text-slate-400 tracking-wider hover:text-blue-400 transition-colors"
+                    >
+                      GitHub ↗
+                    </a>
+                  ) : (
+                    <span className="font-mono text-[10px] text-slate-600 tracking-wider">
+                      Private
+                    </span>
+                  )}
                 </div>
-              )
-            })}
+
+                <h3 className="text-slate-100 font-semibold text-base mb-2 leading-snug">
+                  {project.title}
+                </h3>
+
+                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                  {project.description}
+                </p>
+
+                <ul className="space-y-1.5 mb-4">
+                  {project.details.map((d, i) => (
+                    <li key={i} className="flex items-start gap-2 text-slate-500 text-xs leading-relaxed">
+                      <span className="w-1 h-1 rounded-full bg-slate-600 mt-1.5 flex-shrink-0" />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="font-mono text-[11px] tracking-wider text-slate-600">
+                  {project.tags.join(' · ')}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

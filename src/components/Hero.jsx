@@ -44,21 +44,8 @@ const socialLinks = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden">
-      {/* Subtle dot-grid texture */}
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern id="dot-grid" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" fill="rgb(148 163 184)" fillOpacity="0.035" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#dot-grid)" />
-      </svg>
-
-      <div className="relative max-w-5xl mx-auto px-6 pt-36 pb-24">
+    <section id="top">
+      <div className="max-w-5xl mx-auto px-6 pt-36 pb-24">
           <p className="mono-label mb-4">Signal Optimization Engineer · NoTraffic</p>
 
           <h1 className="text-5xl sm:text-6xl font-bold text-slate-50 tracking-tight leading-none mb-2">
@@ -67,9 +54,8 @@ export default function Hero() {
           <p className="font-mono text-xs text-slate-600 mb-6">Licensed Professional Engineer · Georgia · #PE054784</p>
 
           <p className="text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed mb-8">
-            I put AI signal control on real streets. I own deployments end to end:
-            simulation, go-live, algorithm tuning, and the before/after numbers that
-            prove it worked. 72+ intersections across the US and Canada.
+            I put AI traffic management systems on real streets: 72+ intersections
+            across the US and Canada, from simulation to go-live to measured results.
           </p>
 
           <div className="flex items-center gap-2 mb-8 text-slate-500">
@@ -79,27 +65,22 @@ export default function Hero() {
             <span className="font-mono text-xs tracking-wider text-slate-400">Atlanta, GA</span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target={link.external ? '_blank' : undefined}
                 rel={link.external ? 'noopener noreferrer' : undefined}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 hover:text-blue-400 hover:border-blue-400/50 hover:bg-blue-400/5 transition-colors duration-150 font-mono text-xs tracking-wider"
+                className="inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors duration-150 font-mono text-xs tracking-wider"
               >
                 {link.icon}
                 {link.label}
-                {link.external && (
-                  <svg viewBox="0 0 12 12" fill="currentColor" className="w-2.5 h-2.5 opacity-50">
-                    <path d="M3.5 0A.5.5 0 003 .5v1a.5.5 0 001 0V1h6.5v6.5h-.5a.5.5 0 000 1h1a.5.5 0 00.5-.5v-8a.5.5 0 00-.5-.5h-8zM.5 3a.5.5 0 00-.5.5v8a.5.5 0 00.5.5h8a.5.5 0 00.5-.5V7a.5.5 0 00-1 0v4.5h-7V4h4.5a.5.5 0 000-1H.5z" />
-                  </svg>
-                )}
               </a>
             ))}
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-400 hover:bg-blue-500/20 hover:border-blue-400/60 transition-colors duration-150 font-mono text-xs tracking-wider"
+              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-150 font-mono text-xs tracking-wider"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />

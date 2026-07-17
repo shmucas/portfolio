@@ -3,7 +3,6 @@ import SectionHeading from './SectionHeading'
 const skillGroups = [
   {
     category: 'Transportation Systems',
-    icon: '◈',
     skills: [
       'Adaptive Signal Control',
       'NTCIP Protocol',
@@ -19,7 +18,6 @@ const skillGroups = [
   },
   {
     category: 'AI & Agentic Engineering',
-    icon: '◇',
     skills: [
       'Claude Code',
       'MCP Server Development',
@@ -30,7 +28,6 @@ const skillGroups = [
   },
   {
     category: 'Software Engineering',
-    icon: '◆',
     skills: [
       'Python',
       'JavaScript',
@@ -45,7 +42,6 @@ const skillGroups = [
   },
   {
     category: 'Hardware & Embedded',
-    icon: '◐',
     skills: [
       'ESP32 / Arduino / RPi5',
       'SNMP Hardware Polling',
@@ -55,7 +51,6 @@ const skillGroups = [
   },
   {
     category: 'Automation & Validation',
-    icon: '◉',
     skills: [
       'User Acceptance Testing',
       'CI/CD (Jenkins)',
@@ -65,7 +60,6 @@ const skillGroups = [
   },
   {
     category: 'Infrastructure & Operations',
-    icon: '◎',
     skills: [
       'Microsoft Azure',
       'Kubernetes',
@@ -77,58 +71,34 @@ const skillGroups = [
   },
 ]
 
+const languages = [
+  { lang: 'English', level: 'Native' },
+  { lang: 'Portuguese', level: 'Native' },
+  { lang: 'Spanish', level: 'Fluent' },
+]
+
 export default function Skills() {
   return (
     <section id="skills" className="py-24 border-t border-slate-800/60">
       <div className="max-w-5xl mx-auto px-6">
-        <div>
-          <SectionHeading eyebrow="Skills" title="The toolbox." />
+        <SectionHeading eyebrow="Skills" title="The toolbox." />
 
-          <div className="grid sm:grid-cols-2 gap-6">
-            {skillGroups.map((group) => (
-              <div
-                key={group.category}
-                className="bg-slate-900 border border-slate-800 rounded-lg p-5 hover:border-slate-700 transition-colors duration-200"
-              >
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-blue-400/60 text-sm font-mono">{group.icon}</span>
-                  <h3 className="text-slate-300 text-sm font-medium">{group.category}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="font-mono text-xs px-2.5 py-1 bg-slate-800/80 border border-slate-700/60 text-slate-400 rounded hover:text-slate-300 hover:border-slate-600 transition-colors"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
+          {skillGroups.map((group) => (
+            <div key={group.category}>
+              <h3 className="text-slate-200 text-sm font-medium mb-2">{group.category}</h3>
+              <p className="font-mono text-xs text-slate-500 leading-loose">
+                {group.skills.join(' · ')}
+              </p>
+            </div>
+          ))}
+        </div>
 
-          {/* Languages */}
-          <div className="mt-6 bg-slate-900 border border-slate-800 rounded-lg p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-blue-400/60 text-sm font-mono">◌</span>
-              <h3 className="text-slate-300 text-sm font-medium">Languages</h3>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              {[
-                { lang: 'English', level: 'Native' },
-                { lang: 'Portuguese', level: 'Native' },
-                { lang: 'Spanish', level: 'Fluent' },
-              ].map(({ lang, level }) => (
-                <div key={lang} className="flex items-center gap-2">
-                  <span className="text-slate-200 text-sm font-medium">{lang}</span>
-                  <span className="font-mono text-[10px] tracking-wider text-slate-500 uppercase">
-                    {level}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="mt-10">
+          <h3 className="text-slate-200 text-sm font-medium mb-2">Languages</h3>
+          <p className="font-mono text-xs text-slate-500 leading-loose">
+            {languages.map(({ lang, level }) => `${lang} (${level})`).join(' · ')}
+          </p>
         </div>
       </div>
     </section>

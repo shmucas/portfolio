@@ -65,22 +65,19 @@ export default function About() {
               width="800"
               height="800"
               loading="lazy"
-              className="w-full aspect-square object-cover rounded-lg border border-slate-800 mb-4"
+              className="w-full aspect-square object-cover rounded-lg mb-8"
             />
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-6">
               {stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="bg-slate-900 border border-slate-800 rounded-lg p-4 hover:border-slate-700 transition-colors"
-                >
+                <div key={s.label}>
                   <div className="text-2xl font-bold text-blue-400 font-mono mb-1">{s.value}</div>
                   <div className="text-xs text-slate-500 leading-tight">{s.label}</div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-3 bg-slate-900 border border-slate-800 rounded-lg p-4">
+            <div className="mt-8">
               <p className="mono-label mb-3">Education</p>
               <p className="text-slate-200 text-sm font-medium">Georgia Institute of Technology</p>
               <p className="text-slate-400 text-sm">B.S. Civil Engineering</p>

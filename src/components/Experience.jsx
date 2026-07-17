@@ -69,7 +69,7 @@ export default function Experience() {
                   {/* Timeline dot */}
                   <div
                     className={`absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full -translate-x-[4px] hidden md:block ${
-                      job.current ? 'bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.6)]' : 'bg-slate-600'
+                      job.current ? 'bg-blue-400' : 'bg-slate-600'
                     }`}
                   />
 
@@ -100,16 +100,9 @@ export default function Experience() {
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-1.5">
-                    {job.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="font-mono text-[10px] tracking-wider px-2 py-0.5 bg-slate-900 border border-slate-800 text-slate-500 rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="font-mono text-[11px] tracking-wider text-slate-600">
+                    {job.tags.join(' · ')}
+                  </p>
                 </div>
               ))}
             </div>
