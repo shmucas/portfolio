@@ -5,7 +5,7 @@ const groups = [
   {
     category: 'Tinkering with',
     items: [
-      { title: 'Raspberry Pi pool monitor' },
+      { title: 'Raspberry Pi pool monitor', href: 'https://github.com/shmucas/Pool-Sensor' },
       { title: 'lulu-ai', href: 'https://github.com/shmucas/lulu.ai-desk-companion' },
       { title: 'CAD for 3D printing' },
     ],
