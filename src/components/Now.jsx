@@ -76,24 +76,6 @@ export default function Now() {
       <div className="max-w-5xl mx-auto px-6">
         <SectionHeading eyebrow="Now" title="What I'm into right now." />
 
-        {nowPlaying && (
-          <a
-            href={nowPlaying.url || undefined}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 mb-10 px-4 py-3 rounded-lg border border-amber-400/30 bg-amber-400/5 hover:bg-amber-400/10 transition-colors w-fit"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
-            </span>
-            <span className="font-mono text-xs text-neutral-400">
-              Now playing <span className="text-neutral-200">{nowPlaying.title}</span> by{' '}
-              {nowPlaying.artist}
-            </span>
-          </a>
-        )}
-
         <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8">
           {displayGroups.map((group) => (
             <div key={group.category}>
@@ -118,6 +100,21 @@ export default function Now() {
                   </span>
                 ))}
               </p>
+
+              {group.category === 'Listening to' && nowPlaying && (
+                <a
+                  href={nowPlaying.url || undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 mt-2 text-xs font-mono text-neutral-500 hover:text-amber-400 transition-colors w-fit"
+                >
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
+                  </span>
+                  Currently listening to {nowPlaying.title} by {nowPlaying.artist}
+                </a>
+              )}
             </div>
           ))}
         </div>
