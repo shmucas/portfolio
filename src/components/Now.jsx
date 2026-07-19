@@ -46,12 +46,14 @@ const groups = [
 
 export default function Now() {
   const [topAlbum, setTopAlbum] = useState(null)
+  const [nowPlaying, setNowPlaying] = useState(null)
 
   useEffect(() => {
     fetch('/api/spotify')
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => {
         if (data?.album) setTopAlbum(data.album)
+        if (data?.nowPlaying) setNowPlaying(data.nowPlaying)
       })
       .catch(() => {})
   }, [])
@@ -73,6 +75,24 @@ export default function Now() {
     <section id="now" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
       <div className="max-w-5xl mx-auto px-6">
         <SectionHeading eyebrow="Now" title="What I'm into right now." />
+
+        {nowPlaying && (
+          <a
+            href={nowPlaying.url || undefined}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 mb-10 px-4 py-3 rounded-lg border border-amber-400/30 bg-amber-400/5 hover:bg-amber-400/10 transition-colors w-fit"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
+            </span>
+            <span className="font-mono text-xs text-neutral-400">
+              Now playing <span className="text-neutral-200">{nowPlaying.title}</span> by{' '}
+              {nowPlaying.artist}
+            </span>
+          </a>
+        )}
 
         <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8">
           {displayGroups.map((group) => (
