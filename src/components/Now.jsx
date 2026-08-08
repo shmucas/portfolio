@@ -72,52 +72,50 @@ export default function Now() {
   )
 
   return (
-    <section id="now" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
-      <div className="max-w-5xl mx-auto px-6">
-        <SectionHeading eyebrow="Now" title="What I'm into right now." />
+    <section id="now" className="py-16 border-t border-ink-800 scroll-mt-6">
+      <SectionHeading eyebrow="Now" title="What I'm into right now." />
 
-        <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8">
-          {displayGroups.map((group) => (
-            <div key={group.category}>
-              <h3 className="text-neutral-200 text-sm font-medium mb-2">{group.category}</h3>
-              <p className="font-mono text-xs text-neutral-400 leading-loose">
-                {group.items.map((item, i) => (
-                  <span key={item.title}>
-                    {i > 0 && ' · '}
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-amber-400 transition-colors"
-                      >
-                        {item.title}
-                        <span className="text-neutral-600">&#8599;</span>
-                      </a>
-                    ) : (
-                      item.title
-                    )}
-                  </span>
-                ))}
-              </p>
+      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+        {displayGroups.map((group) => (
+          <div key={group.category}>
+            <h3 className="text-ink-100 text-sm font-medium mb-2">{group.category}</h3>
+            <p className="font-mono text-xs text-ink-400 leading-loose break-words">
+              {group.items.map((item, i) => (
+                <span key={item.title}>
+                  {i > 0 && ' · '}
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-ink-50 transition-colors"
+                    >
+                      {item.title}
+                      <span className="text-ink-600">&#8599;</span>
+                    </a>
+                  ) : (
+                    item.title
+                  )}
+                </span>
+              ))}
+            </p>
 
-              {group.category === 'Listening to' && nowPlaying && (
-                <a
-                  href={nowPlaying.url || undefined}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 mt-2 text-xs font-mono text-neutral-500 hover:text-amber-400 transition-colors w-fit"
-                >
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
-                  </span>
-                  Currently listening to {nowPlaying.title} by {nowPlaying.artist}
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
+            {group.category === 'Listening to' && nowPlaying && (
+              <a
+                href={nowPlaying.url || undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 mt-2 text-xs font-mono text-ink-400 hover:text-amber-400 transition-colors w-fit"
+              >
+                <span className="relative flex h-1.5 w-1.5 flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-400" />
+                </span>
+                Currently listening to {nowPlaying.title} by {nowPlaying.artist}
+              </a>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   )

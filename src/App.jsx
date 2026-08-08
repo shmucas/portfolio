@@ -1,5 +1,5 @@
-import Nav from './components/Nav'
-import Hero from './components/Hero'
+import Rail from './components/Rail'
+import Statement from './components/Statement'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
@@ -11,19 +11,22 @@ import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-neutral-950">
+    <div className="min-h-screen bg-ink-950 md:grid md:grid-cols-[260px_minmax(0,1fr)] md:items-start">
       <Analytics />
-      <Nav />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Volunteer />
-        <Now />
-      </main>
-      <Footer />
+      <Rail />
+
+      <div className="min-w-0 px-6 py-12 md:px-12 md:py-16 max-w-4xl">
+        <main>
+          <Statement />
+          <About />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Volunteer />
+          <Now />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -8,11 +8,11 @@
   }
 
   body {
-    @apply bg-neutral-950 text-neutral-100 font-sans antialiased;
+    @apply bg-ink-950 text-ink-300 font-sans antialiased;
   }
 
   ::selection {
-    @apply bg-amber-400/30 text-amber-100;
+    @apply bg-ink-700 text-ink-50;
   }
 
   ::-webkit-scrollbar {
@@ -20,20 +20,35 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-neutral-950;
+    @apply bg-ink-950;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-neutral-700 rounded-full;
+    @apply bg-ink-700 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-neutral-600;
+    @apply bg-ink-600;
   }
 }
 
 @layer utilities {
+  /* Section eyebrow. Warm gray, not amber: amber is reserved for live state. */
   .mono-label {
-    @apply font-mono text-xs tracking-widest uppercase text-amber-400;
+    @apply font-mono text-xs tracking-widest uppercase text-ink-400;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

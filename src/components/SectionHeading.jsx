@@ -1,10 +1,12 @@
 export default function SectionHeading({ eyebrow, title }) {
   return (
-    <div className="mb-10">
+    <div className="mb-8">
       <p className="mono-label mb-2">{eyebrow}</p>
-      <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-100 tracking-tight">
-        {title}
-      </h2>
+      {title && (
+        <h2 className="text-xl sm:text-2xl font-semibold text-ink-50 tracking-tight">
+          {title}
+        </h2>
+      )}
     </div>
   )
 }
