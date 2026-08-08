@@ -79,27 +79,25 @@ const languages = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
-      <div className="max-w-5xl mx-auto px-6">
-        <SectionHeading eyebrow="Skills" title="The toolbox." />
+    <section id="skills" className="py-16 border-t border-ink-800 scroll-mt-6">
+      <SectionHeading eyebrow="Skills" title="The toolbox." />
 
-        <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
-          {skillGroups.map((group) => (
-            <div key={group.category}>
-              <h3 className="text-neutral-200 text-sm font-medium mb-2">{group.category}</h3>
-              <p className="font-mono text-xs text-neutral-400 leading-loose">
-                {group.skills.join(' · ')}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+        {skillGroups.map((group) => (
+          <div key={group.category}>
+            <h3 className="text-ink-100 text-sm font-medium mb-2">{group.category}</h3>
+            <p className="font-mono text-xs text-ink-400 leading-loose break-words">
+              {group.skills.join(' · ')}
+            </p>
+          </div>
+        ))}
+      </div>
 
-        <div className="mt-10">
-          <h3 className="text-neutral-200 text-sm font-medium mb-2">Languages</h3>
-          <p className="font-mono text-xs text-neutral-500 leading-loose">
-            {languages.map(({ lang, level }) => `${lang} (${level})`).join(' · ')}
-          </p>
-        </div>
+      <div className="mt-8">
+        <h3 className="text-ink-100 text-sm font-medium mb-2">Languages</h3>
+        <p className="font-mono text-xs text-ink-500 leading-loose break-words">
+          {languages.map(({ lang, level }) => `${lang} (${level})`).join(' · ')}
+        </p>
       </div>
     </section>
   )

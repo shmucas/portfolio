@@ -13,28 +13,24 @@ const roles = [
     role: 'Alumni Board President',
     sub: 'Alpha Tau Omega · Georgia Tech',
     description:
-      'Promoted from treasurer to president of the non-profit alumni board. I manage the endowment, advise active chapter leadership, and administer scholarships on behalf of the ATO Foundation.',
+      'Promoted from treasurer to president of the non-profit alumni board. I manage the endowment, advise active chapter leadership, and administer scholarships on behalf of the ATO Foundation. I transferred into Georgia Tech, so giving back to the people who opened that door matters to me.',
   },
 ]
 
 export default function Volunteer() {
   return (
-    <section id="volunteer" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
-      <div className="max-w-5xl mx-auto px-6">
-        <div>
-          <SectionHeading eyebrow="Community" title="Outside the day job." />
+    <section id="volunteer" className="py-16 border-t border-ink-800 scroll-mt-6">
+      <SectionHeading eyebrow="Volunteering" title="Outside the day job." />
 
-          <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
-            {roles.map((r) => (
-              <div key={r.org}>
-                <h3 className="text-neutral-200 font-medium text-sm">{r.org}</h3>
-                <p className="text-amber-400/90 text-xs font-mono mt-0.5">{r.role}</p>
-                <p className="text-neutral-600 text-xs font-mono mt-0.5 mb-3">{r.sub}</p>
-                <p className="text-neutral-400 text-sm leading-relaxed">{r.description}</p>
-              </div>
-            ))}
+      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+        {roles.map((r) => (
+          <div key={r.org}>
+            <h3 className="text-ink-100 font-medium text-sm">{r.org}</h3>
+            <p className="text-ink-300 text-xs font-mono mt-0.5">{r.role}</p>
+            <p className="text-ink-600 text-xs font-mono mt-0.5 mb-3">{r.sub}</p>
+            <p className="text-ink-400 text-sm leading-relaxed">{r.description}</p>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   )

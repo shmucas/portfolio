@@ -6,8 +6,9 @@ const projects = [
     id: 'atms-lite',
     label: 'Traffic Signal Management System',
     title: 'ATMS-lite: Live Traffic Signal Dashboard',
+    lead: true,
     description:
-      'A live dashboard wired to a real traffic signal controller on my desk. It streams live signal status, lets an operator send safe commands back to the hardware, and generates ATSPM-style performance reports. Built to scale from one intersection to a corridor.',
+      'A live dashboard wired to a real traffic signal controller on my desk. It streams live signal status, lets an operator send safe commands back to the hardware, and generates ATSPM-style performance reports. Built because I wanted to see why a deployment failed instead of guessing.',
     details: [
       'Streams live signal, walk, and call status over SNMP at ~5 Hz, with automatic recovery if the controller drops offline',
       'Sends commands back to the hardware with guardrails against unsafe signal states',
@@ -29,7 +30,7 @@ const projects = [
     label: 'Traffic Simulation',
     title: 'Locally Hosted Traffic Simulation Web App',
     description:
-      'A full-stack React and Python application that ingests turning movement counts, intersection geometry, and NTCIP controller databases to run a multi-intersection corridor simulation using HCM 7th Edition Chapter 19 methodology.',
+      'A full-stack React and Python application that ingests turning movement counts, intersection geometry, and NTCIP controller databases to run a multi-intersection corridor simulation using HCM 7th Edition Chapter 19 methodology. Written from scratch, parser included, to check field recommendations against the actual math.',
     details: [
       'NTCIP parser handles Econolite ASC/3, Intelight, and generic NTCIP CSV formats, extracting phase parameters, timing plans, cycle lengths, offsets, splits, and detector channels',
       'HCM 7th Edition signalized intersection engine computing adjusted saturation flow, uniform delay (d1), incremental delay (d2), 95th percentile queue, v/c ratio, and LOS A–F per lane group',
@@ -51,8 +52,77 @@ const projects = [
     ],
     tags: ['ESP32-S3', 'Python', 'FastAPI', 'WebSockets', 'Ollama', 'Local LLMs', 'faster-whisper', 'Piper TTS', 'Arduino/PlatformIO'],
     github: 'https://github.com/shmucas/lulu.ai-desk-companion',
-  }
+  },
 ]
+
+function ProjectCard({ project, onDemo }) {
+  return (
+    <div className="border border-ink-800 bg-ink-900/50 rounded-lg p-5 hover:border-ink-700 transition-colors duration-200">
+      {project.lead && project.demo && (
+        <button
+          onClick={() => onDemo(project)}
+          className="group block w-full mb-4 rounded-md overflow-hidden border border-ink-800 hover:border-ink-700 transition-colors"
+          aria-label={`Play ${project.title} demo`}
+        >
+          <img
+            src={project.demo.poster}
+            alt=""
+            className="w-full aspect-[16/7] object-cover"
+            loading="lazy"
+          />
+        </button>
+      )}
+
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-3">
+        <span className="font-mono text-[10px] tracking-widest uppercase text-ink-500">
+          {project.label}
+        </span>
+
+        <div className="flex items-center gap-4">
+          {project.demo && (
+            <button
+              onClick={() => onDemo(project)}
+              className="font-mono text-[10px] tracking-wider text-ink-100 hover:text-ink-50 underline underline-offset-2 decoration-ink-600 transition-colors"
+            >
+              ▶ Live demo
+            </button>
+          )}
+          {project.github ? (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] text-ink-400 tracking-wider hover:text-ink-50 transition-colors"
+            >
+              GitHub ↗
+            </a>
+          ) : (
+            <span className="font-mono text-[10px] text-ink-600 tracking-wider">Private</span>
+          )}
+        </div>
+      </div>
+
+      <h3 className="text-ink-50 font-semibold text-base mb-2 leading-snug">
+        {project.title}
+      </h3>
+
+      <p className="text-ink-300 text-sm leading-relaxed mb-4">{project.description}</p>
+
+      <ul className="space-y-1.5 mb-4">
+        {project.details.map((d, i) => (
+          <li key={i} className="flex items-start gap-2 text-ink-400 text-xs leading-relaxed">
+            <span className="w-1 h-1 rounded-full bg-ink-600 mt-1.5 flex-shrink-0" />
+            {d}
+          </li>
+        ))}
+      </ul>
+
+      <p className="font-mono text-[11px] tracking-wider text-ink-500 break-words">
+        {project.tags.join(' · ')}
+      </p>
+    </div>
+  )
+}
 
 export default function Projects() {
   const [demo, setDemo] = useState(null)
@@ -70,73 +140,18 @@ export default function Projects() {
     }
   }, [demo])
 
+  const [lead, ...rest] = projects
+
   return (
-    <section id="projects" className="py-24 border-t border-neutral-800/60 scroll-mt-14">
-      <div className="max-w-5xl mx-auto px-6">
-        <div>
-          <SectionHeading eyebrow="Projects" title="Things I've built to prove it." />
+    <section id="projects" className="py-16 border-t border-ink-800 scroll-mt-6">
+      <SectionHeading eyebrow="Projects" title="Things I've built to prove it." />
 
-          <div className="grid sm:grid-cols-2 gap-5">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="border border-neutral-800 bg-neutral-900/40 rounded-lg p-6 hover:border-neutral-700 transition-colors duration-200"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-[10px] tracking-widest uppercase text-neutral-500">
-                    {project.label}
-                  </span>
+      <ProjectCard project={lead} onDemo={setDemo} />
 
-                  <div className="flex items-center gap-4">
-                    {project.demo && (
-                      <button
-                        onClick={() => setDemo(project)}
-                        className="font-mono text-[10px] tracking-wider text-amber-400 hover:text-amber-300 transition-colors"
-                      >
-                        ▶ Live demo
-                      </button>
-                    )}
-                    {project.github ? (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-mono text-[10px] text-neutral-400 tracking-wider hover:text-neutral-100 transition-colors"
-                      >
-                        GitHub ↗
-                      </a>
-                    ) : (
-                      <span className="font-mono text-[10px] text-neutral-600 tracking-wider">
-                        Private
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <h3 className="text-neutral-100 font-semibold text-base mb-2 leading-snug">
-                  {project.title}
-                </h3>
-
-                <p className="text-neutral-300 text-sm leading-relaxed mb-4">
-                  {project.description}
-                </p>
-
-                <ul className="space-y-1.5 mb-4">
-                  {project.details.map((d, i) => (
-                    <li key={i} className="flex items-start gap-2 text-neutral-400 text-xs leading-relaxed">
-                      <span className="w-1 h-1 rounded-full bg-neutral-600 mt-1.5 flex-shrink-0" />
-                      {d}
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="font-mono text-[11px] tracking-wider text-neutral-500">
-                  {project.tags.join(' · ')}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="grid sm:grid-cols-2 gap-5 mt-5">
+        {rest.map((project) => (
+          <ProjectCard key={project.id} project={project} onDemo={setDemo} />
+        ))}
       </div>
 
       {demo && (
@@ -149,11 +164,11 @@ export default function Projects() {
         >
           <div className="w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-3">
-              <p className="font-mono text-xs tracking-wider text-neutral-300">{demo.title}</p>
+              <p className="font-mono text-xs tracking-wider text-ink-300">{demo.title}</p>
               <button
                 onClick={() => setDemo(null)}
                 aria-label="Close demo"
-                className="font-mono text-neutral-400 hover:text-neutral-100 transition-colors text-xl leading-none px-2"
+                className="font-mono text-ink-400 hover:text-ink-50 transition-colors text-xl leading-none px-2"
               >
                 ×
               </button>
@@ -172,9 +187,9 @@ export default function Projects() {
               muted
               playsInline
               controls
-              className="w-full rounded-lg border border-neutral-800"
+              className="w-full rounded-lg border border-ink-800"
             />
-            <p className="mt-3 font-mono text-[11px] tracking-wider text-neutral-500">
+            <p className="mt-3 font-mono text-[11px] tracking-wider text-ink-500">
               {demo.demo.caption}
             </p>
           </div>
