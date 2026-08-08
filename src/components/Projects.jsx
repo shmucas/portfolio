@@ -57,11 +57,11 @@ const projects = [
 
 function ProjectCard({ project, onDemo }) {
   return (
-    <div className="border border-ink-800 bg-ink-900/50 rounded-lg p-5 hover:border-ink-700 transition-colors duration-200">
+    <div className="border border-neutral-800 bg-neutral-900/50 rounded-lg p-5 hover:border-neutral-700 transition-colors duration-200">
       {project.lead && project.demo && (
         <button
           onClick={() => onDemo(project)}
-          className="group block w-full mb-4 rounded-md overflow-hidden border border-ink-800 hover:border-ink-700 transition-colors"
+          className="group block w-full mb-4 rounded-md overflow-hidden border border-neutral-800 hover:border-neutral-700 transition-colors"
           aria-label={`Play ${project.title} demo`}
         >
           <img
@@ -74,7 +74,7 @@ function ProjectCard({ project, onDemo }) {
       )}
 
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mb-3">
-        <span className="font-mono text-[10px] tracking-widest uppercase text-ink-500">
+        <span className="font-mono text-[10px] tracking-widest uppercase text-neutral-500">
           {project.label}
         </span>
 
@@ -82,7 +82,7 @@ function ProjectCard({ project, onDemo }) {
           {project.demo && (
             <button
               onClick={() => onDemo(project)}
-              className="font-mono text-[10px] tracking-wider text-ink-100 hover:text-ink-50 underline underline-offset-2 decoration-ink-600 transition-colors"
+              className="font-mono text-[10px] tracking-wider text-amber-400 hover:text-amber-300 transition-colors"
             >
               ▶ Live demo
             </button>
@@ -92,32 +92,32 @@ function ProjectCard({ project, onDemo }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-[10px] text-ink-400 tracking-wider hover:text-ink-50 transition-colors"
+              className="font-mono text-[10px] text-neutral-400 tracking-wider hover:text-neutral-100 transition-colors"
             >
               GitHub ↗
             </a>
           ) : (
-            <span className="font-mono text-[10px] text-ink-600 tracking-wider">Private</span>
+            <span className="font-mono text-[10px] text-neutral-600 tracking-wider">Private</span>
           )}
         </div>
       </div>
 
-      <h3 className="text-ink-50 font-semibold text-base mb-2 leading-snug">
+      <h3 className="text-neutral-50 font-semibold text-base mb-2 leading-snug">
         {project.title}
       </h3>
 
-      <p className="text-ink-300 text-sm leading-relaxed mb-4">{project.description}</p>
+      <p className="text-neutral-300 text-sm leading-relaxed mb-4">{project.description}</p>
 
       <ul className="space-y-1.5 mb-4">
         {project.details.map((d, i) => (
-          <li key={i} className="flex items-start gap-2 text-ink-400 text-xs leading-relaxed">
-            <span className="w-1 h-1 rounded-full bg-ink-600 mt-1.5 flex-shrink-0" />
+          <li key={i} className="flex items-start gap-2 text-neutral-400 text-xs leading-relaxed">
+            <span className="w-1 h-1 rounded-full bg-neutral-600 mt-1.5 flex-shrink-0" />
             {d}
           </li>
         ))}
       </ul>
 
-      <p className="font-mono text-[11px] tracking-wider text-ink-500 break-words">
+      <p className="font-mono text-[11px] tracking-wider text-neutral-500 break-words">
         {project.tags.join(' · ')}
       </p>
     </div>
@@ -143,7 +143,7 @@ export default function Projects() {
   const [lead, ...rest] = projects
 
   return (
-    <section id="projects" className="py-16 border-t border-ink-800 scroll-mt-6">
+    <section id="projects" className="py-16 border-t border-neutral-800/60 scroll-mt-6">
       <SectionHeading eyebrow="Projects" title="Things I've built to prove it." />
 
       <ProjectCard project={lead} onDemo={setDemo} />
@@ -164,11 +164,11 @@ export default function Projects() {
         >
           <div className="w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-3">
-              <p className="font-mono text-xs tracking-wider text-ink-300">{demo.title}</p>
+              <p className="font-mono text-xs tracking-wider text-neutral-300">{demo.title}</p>
               <button
                 onClick={() => setDemo(null)}
                 aria-label="Close demo"
-                className="font-mono text-ink-400 hover:text-ink-50 transition-colors text-xl leading-none px-2"
+                className="font-mono text-neutral-400 hover:text-neutral-50 transition-colors text-xl leading-none px-2"
               >
                 ×
               </button>
@@ -187,9 +187,9 @@ export default function Projects() {
               muted
               playsInline
               controls
-              className="w-full rounded-lg border border-ink-800"
+              className="w-full rounded-lg border border-neutral-800"
             />
-            <p className="mt-3 font-mono text-[11px] tracking-wider text-ink-500">
+            <p className="mt-3 font-mono text-[11px] tracking-wider text-neutral-500">
               {demo.demo.caption}
             </p>
           </div>

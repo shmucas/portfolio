@@ -11,7 +11,7 @@ import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-ink-950 md:grid md:grid-cols-[260px_minmax(0,1fr)] md:items-start">
+    <div className="min-h-screen bg-neutral-950 md:grid md:grid-cols-[200px_minmax(0,1fr)] md:items-start">
       <Analytics />
       <Rail />
 

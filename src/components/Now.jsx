@@ -72,14 +72,14 @@ export default function Now() {
   )
 
   return (
-    <section id="now" className="py-16 border-t border-ink-800 scroll-mt-6">
+    <section id="now" className="py-16 border-t border-neutral-800/60 scroll-mt-6">
       <SectionHeading eyebrow="Now" title="What I'm into right now." />
 
       <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
         {displayGroups.map((group) => (
           <div key={group.category}>
-            <h3 className="text-ink-100 text-sm font-medium mb-2">{group.category}</h3>
-            <p className="font-mono text-xs text-ink-400 leading-loose break-words">
+            <h3 className="text-neutral-100 text-sm font-medium mb-2">{group.category}</h3>
+            <p className="font-mono text-xs text-neutral-400 leading-loose break-words">
               {group.items.map((item, i) => (
                 <span key={item.title}>
                   {i > 0 && ' · '}
@@ -88,10 +88,10 @@ export default function Now() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-ink-50 transition-colors"
+                      className="hover:text-amber-400 transition-colors"
                     >
                       {item.title}
-                      <span className="text-ink-600">&#8599;</span>
+                      <span className="text-neutral-600">&#8599;</span>
                     </a>
                   ) : (
                     item.title
@@ -105,7 +105,7 @@ export default function Now() {
                 href={nowPlaying.url || undefined}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 mt-2 text-xs font-mono text-ink-400 hover:text-amber-400 transition-colors w-fit"
+                className="flex items-center gap-1.5 mt-2 text-xs font-mono text-neutral-400 hover:text-amber-400 transition-colors w-fit"
               >
                 <span className="relative flex h-1.5 w-1.5 flex-shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />

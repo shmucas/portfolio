@@ -54,7 +54,7 @@ export default function Rail() {
   return (
     <aside
       id="top"
-      className="md:sticky md:top-0 md:h-screen md:overflow-y-auto border-b md:border-b-0 md:border-r border-ink-800 px-6 py-6 md:py-10 md:px-8"
+      className="md:sticky md:top-0 md:h-screen md:overflow-y-auto border-b md:border-b-0 md:border-r border-neutral-800 px-6 py-6 md:py-10 md:px-6"
     >
       <div className="flex md:block items-center gap-4">
         <img
@@ -62,21 +62,24 @@ export default function Rail() {
           alt="Lucas Ferreira"
           width="320"
           height="320"
-          className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover flex-shrink-0"
+          className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover flex-shrink-0"
         />
 
         <div className="min-w-0 md:mt-4">
-          <p className="text-lg md:text-xl font-semibold text-ink-50 tracking-tight leading-tight">
+          <p className="text-lg md:text-base font-semibold text-neutral-50 tracking-tight leading-tight">
             Lucas Ferreira, PE
           </p>
-          <p className="font-mono text-[11px] text-ink-400 leading-relaxed mt-0.5">
-            Signal Optimization Engineer
-            <span className="md:block"> · NoTraffic</span>
+          <p className="font-mono text-[11px] text-neutral-400 leading-snug mt-1">
+            Signal Optimization
+            <br className="hidden md:inline" /> Engineer
+          </p>
+          <p className="font-mono text-[11px] text-neutral-500 leading-snug">
+            NoTraffic
           </p>
         </div>
 
         <button
-          className="md:hidden ml-auto p-2 text-ink-400 hover:text-ink-50 transition-colors"
+          className="md:hidden ml-auto p-2 text-neutral-400 hover:text-neutral-50 transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -99,14 +102,16 @@ export default function Rail() {
         </button>
       </div>
 
-      <p className="hidden md:block font-mono text-[11px] text-ink-500 leading-relaxed mt-3">
+      <p className="hidden md:block font-mono text-[11px] text-neutral-600 leading-snug mt-3">
         Atlanta, GA
         <br />
-        Licensed PE · Georgia · #PE054784
+        Licensed PE · Georgia
+        <br />
+        #PE054784
       </p>
 
       <nav
-        className={`${menuOpen ? 'block' : 'hidden'} md:block mt-6 border-l border-ink-800`}
+        className={`${menuOpen ? 'block' : 'hidden'} md:block mt-6 border-l border-neutral-800`}
         aria-label="Sections"
       >
         {sections.map((s) => {
@@ -119,8 +124,8 @@ export default function Rail() {
               aria-current={isActive ? 'true' : undefined}
               className={`block font-mono text-[10px] tracking-widest uppercase py-1.5 pl-3 -ml-px border-l transition-colors duration-150 ${
                 isActive
-                  ? 'text-ink-50 border-amber-400'
-                  : 'text-ink-500 border-transparent hover:text-ink-200'
+                  ? 'text-amber-400 border-amber-400'
+                  : 'text-neutral-500 border-transparent hover:text-neutral-200'
               }`}
             >
               {s.label}
@@ -136,10 +141,10 @@ export default function Rail() {
             href={l.href}
             target={l.external ? '_blank' : undefined}
             rel={l.external ? 'noopener noreferrer' : undefined}
-            className="font-mono text-[11px] tracking-wide text-ink-400 hover:text-ink-50 transition-colors duration-150 w-fit break-all"
+            className="font-mono text-[11px] tracking-wide text-neutral-400 hover:text-amber-400 transition-colors duration-150 w-fit break-all"
           >
             {l.label}
-            {l.external && <span className="text-ink-600"> &#8599;</span>}
+            {l.external && <span className="text-neutral-600"> &#8599;</span>}
           </a>
         ))}
       </div>

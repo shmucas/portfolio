@@ -54,35 +54,35 @@ const jobs = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-16 border-t border-ink-800 scroll-mt-6">
+    <section id="experience" className="py-16 border-t border-neutral-800/60 scroll-mt-6">
       <SectionHeading eyebrow="Experience" title="Where I've shipped." />
 
       <div className="space-y-9">
         {jobs.map((job, i) => (
           <div key={i}>
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
-              <h3 className="text-ink-50 font-semibold text-base">{job.company}</h3>
-              <span className="font-mono text-[11px] text-ink-400">{job.role}</span>
+              <h3 className="text-neutral-50 font-semibold text-base">{job.company}</h3>
+              <span className="font-mono text-[11px] text-neutral-400">{job.role}</span>
               {job.current && (
                 <span className="font-mono text-[10px] tracking-wider uppercase px-1.5 py-0.5 border border-amber-400/30 text-amber-400 rounded">
                   Current
                 </span>
               )}
-              <span className="font-mono text-[11px] text-ink-500 sm:ml-auto">
+              <span className="font-mono text-[11px] text-neutral-500 sm:ml-auto">
                 {job.period} · {job.location}
               </span>
             </div>
 
             <ul className="space-y-2 mb-3">
               {job.bullets.map((b, j) => (
-                <li key={j} className="text-ink-400 text-sm leading-relaxed flex gap-2">
-                  <span className="text-ink-600 mt-1.5 flex-shrink-0">›</span>
+                <li key={j} className="text-neutral-400 text-sm leading-relaxed flex gap-2">
+                  <span className="text-neutral-600 mt-1.5 flex-shrink-0">›</span>
                   <span>{b}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="font-mono text-[11px] tracking-wider text-ink-500 break-words">
+            <p className="font-mono text-[11px] tracking-wider text-neutral-500 break-words">
               {job.tags.join(' · ')}
             </p>
           </div>
