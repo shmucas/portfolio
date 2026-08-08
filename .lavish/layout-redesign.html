@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio redesign · Option B</title>
+<style>
+  :root{
+    --bg:#0a0a0a; --n900:#171717; --n800:#262626; --n700:#404040; --n600:#525252;
+    --n500:#737373; --n400:#a3a3a3; --n300:#d4d4d4; --n200:#e5e5e5; --n100:#f5f5f5; --n50:#fafafa;
+    --amber:#fbbf24; --amber-dim:rgba(251,191,36,.30);
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;min-width:0}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--n300);font-family:var(--sans);
+       font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  ::selection{background:rgba(251,191,36,.3);color:#fde68a}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono)}
+  .label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin:0 0 8px}
+
+  .doc-head{padding:56px 0 34px;border-bottom:1px solid var(--n800)}
+  .doc-head h1{font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-.02em;
+    color:var(--n50);margin:0 0 14px;font-weight:700}
+  .doc-head p{max-width:72ch;color:var(--n400);margin:0 0 10px}
+  .doc-head strong{color:var(--n100);font-weight:600}
+
+  .note{margin-top:20px;border:1px solid var(--n800);border-radius:10px;background:var(--n900);padding:16px 18px}
+  .note p{margin:0 0 8px;font-size:14px;color:var(--n400)}
+  .note p:last-child{margin:0}
+  .note b{color:var(--n100);font-weight:600}
+
+  section.block{padding:56px 0;border-bottom:1px solid var(--n800)}
+  section.block > .wrap > h2{font-size:26px;letter-spacing:-.01em;color:var(--n100);margin:0 0 10px;font-weight:600}
+  section.block > .wrap > .sub{max-width:74ch;color:var(--n400);margin:0 0 28px;font-size:15px}
+
+  .rid{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--amber);border:1px solid var(--amber-dim);
+    border-radius:4px;padding:2px 6px;vertical-align:middle;white-space:nowrap;background:rgba(251,191,36,.06)}
+
+  .frame{border:1px solid var(--n800);border-radius:12px;overflow:hidden;background:var(--bg);margin-top:8px}
+  .frame-bar{display:flex;align-items:center;gap:10px;padding:9px 14px;background:var(--n900);border-bottom:1px solid var(--n800)}
+  .dots{display:flex;gap:6px;flex:0 0 auto}
+  .dots i{width:9px;height:9px;border-radius:99px;background:var(--n700);display:block}
+  .frame-bar span{font-family:var(--mono);font-size:11px;color:var(--n500);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .frame-body{max-height:640px;overflow-y:auto;overflow-x:hidden}
+  .frame-body::-webkit-scrollbar{width:6px}
+  .frame-body::-webkit-scrollbar-thumb{background:var(--n700);border-radius:99px}
+
+  /* ---------- copy diff ---------- */
+  .diff{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .diff > div{border:1px solid var(--n800);border-radius:10px;padding:18px;background:var(--n900)}
+  .diff h4{margin:0 0 12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+  .diff .old h4{color:var(--n500)}
+  .diff .new h4{color:var(--amber)}
+  .diff p{margin:0 0 10px;font-size:14px;line-height:1.65}
+  .diff .old p{color:var(--n500)}
+  .diff .new p{color:var(--n300)}
+  .diff .why{margin-top:12px;padding-top:12px;border-top:1px solid var(--n800);font-size:13px;color:var(--n500)}
+
+  .srcs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:6px}
+  .srcs div{border:1px solid var(--n800);border-radius:9px;padding:13px 15px;background:var(--n900)}
+  .srcs .f{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--n600);margin:0 0 6px;overflow-wrap:anywhere}
+  .srcs p{margin:0;font-size:13px;color:var(--n400);line-height:1.55}
+
+  .tradeoff{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px}
+  .tradeoff div{border:1px solid var(--n800);border-radius:9px;padding:14px 16px;background:var(--n900)}
+  .tradeoff h4{margin:0 0 8px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--n500);font-weight:400}
+  .tradeoff h4.win{color:#4ade80}
+  .tradeoff h4.cost{color:#f87171}
+  .tradeoff ul{margin:0;padding-left:16px;font-size:13.5px;color:var(--n400);line-height:1.7}
+
+  /* ================= MOCK ================= */
+  .m{font-size:15px}
+  .m .mlabel{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin:0 0 8px}
+  .m h1{font-size:30px;line-height:1.14;letter-spacing:-.022em;color:var(--n50);margin:0 0 10px;font-weight:700}
+  .m h2{font-size:20px;letter-spacing:-.01em;color:var(--n100);margin:0 0 14px;font-weight:600}
+  .m h3{font-size:15px;color:var(--n100);margin:0;font-weight:600}
+  .m p{margin:0 0 10px;color:var(--n400);font-size:14px;line-height:1.65}
+  .m .lead{color:var(--n300);font-size:16px;line-height:1.6}
+  .m .meta{font-family:var(--mono);font-size:11px;color:var(--n500)}
+  .m .tags{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--n500);margin:0;overflow-wrap:anywhere}
+  .m ul.b{list-style:none;margin:0 0 10px;padding:0}
+  .m ul.b li{display:flex;gap:8px;font-size:13px;color:var(--n400);line-height:1.6;margin-bottom:6px}
+  .m ul.b li::before{content:"›";color:var(--n600);flex:0 0 auto}
+  .m .sec{padding:32px 0;border-top:1px solid rgba(38,38,38,.7)}
+  .m .avatar{width:60px;height:60px;border-radius:99px;background:radial-gradient(circle at 35% 30%,#3f3f46,#18181b);border:1px solid var(--n800);flex:0 0 auto}
+  .m .links{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--n400)}
+  .m .links .acc{color:var(--amber)}
+
+  .b-shell{display:grid;grid-template-columns:238px minmax(0,1fr)}
+  .b-rail{position:sticky;top:0;padding:30px 22px 30px 28px;border-right:1px solid var(--n800);align-self:start}
+  .b-rail .nm{font-size:19px;color:var(--n50);font-weight:650;letter-spacing:-.015em;margin:14px 0 3px;line-height:1.15}
+  .b-rail .rl{font-family:var(--mono);font-size:10.5px;color:var(--n400);line-height:1.55;margin:0 0 4px}
+  .b-rail .lc{font-family:var(--mono);font-size:10.5px;color:var(--n600);margin:0 0 18px;line-height:1.5}
+  .b-railnav{list-style:none;margin:0 0 20px;padding:0;border-left:1px solid var(--n800)}
+  .b-railnav li{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--n500);padding:6px 0 6px 12px;margin-left:-1px;border-left:1px solid transparent}
+  .b-railnav li.on{color:var(--n100);border-left-color:var(--amber)}
+  .b-content{padding:30px 28px 44px}
+  .b-content .sec:first-of-type{border-top:0;padding-top:0}
+
+  .stat-row{display:flex;flex-wrap:wrap;gap:12px 28px;margin:20px 0 0}
+  .stat-row .v{font-family:var(--mono);font-size:17px;color:var(--amber);font-weight:700}
+  .stat-row .k{font-size:10.5px;color:var(--n500);line-height:1.3}
+
+  .job{padding:18px 0;border-top:1px solid rgba(38,38,38,.6)}
+  .job:first-of-type{border-top:0;padding-top:4px}
+  .job .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-bottom:8px}
+  .job .top .role{font-family:var(--mono);font-size:11.5px;color:var(--n400)}
+  .job .top .when{font-family:var(--mono);font-size:11px;color:var(--n500);margin-left:auto}
+
+  .pcard{border:1px solid var(--n800);border-radius:11px;background:rgba(23,23,23,.5);padding:18px;margin-bottom:14px}
+  .pcard .ptop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 14px;margin-bottom:10px}
+  .pcard .ptop .cat{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--n500)}
+  .pcard .ptop .act{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--amber);white-space:nowrap}
+  .pcard .ptop .act.gh{color:var(--n400)}
+  .pmedia{aspect-ratio:16/7;border:1px solid var(--n800);border-radius:8px;margin-bottom:14px;
+    background:linear-gradient(135deg,#141414,#1f1f1f);display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--n600);text-align:center;padding:8px}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+
+  /* ---------- palettes ---------- */
+  .pal{border:1px solid var(--n800);border-radius:12px;overflow:hidden;margin-bottom:18px}
+  .pal-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;padding:15px 18px;background:var(--n900);border-bottom:1px solid var(--n800)}
+  .pal-head h3{margin:0;font-size:17px;color:var(--n50);font-weight:650}
+  .pal-head .pill{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    border:1px solid var(--n700);color:var(--n400);border-radius:99px;padding:3px 9px;white-space:nowrap}
+  .pal-head .pill.rec{border-color:var(--amber-dim);color:var(--amber);background:rgba(251,191,36,.07)}
+  .pal-head p{margin:0;font-size:13.5px;color:var(--n400);flex:1 1 260px;line-height:1.55}
+  .swatches{display:flex;flex-wrap:wrap;gap:0;padding:14px 18px;background:var(--n900);border-bottom:1px solid var(--n800)}
+  .swatches i{display:block;width:46px;height:30px;border:1px solid rgba(255,255,255,.10);margin-right:-1px}
+  .sample{padding:26px 22px}
+  .sample .s-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 8px}
+  .sample .s-nm{font-size:22px;font-weight:700;letter-spacing:-.02em;margin:0 0 4px;line-height:1.15}
+  .sample .s-rl{font-family:var(--mono);font-size:11px;margin:0 0 14px}
+  .sample .s-p{font-size:14.5px;line-height:1.6;margin:0 0 16px;max-width:56ch}
+  .sample .s-stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-bottom:18px}
+  .sample .s-v{font-family:var(--mono);font-size:17px;font-weight:700}
+  .sample .s-k{font-size:10.5px;line-height:1.3}
+  .sample .s-card{border-radius:10px;padding:15px;border:1px solid}
+  .sample .s-card h5{margin:0 0 6px;font-size:14px;font-weight:600}
+  .sample .s-card p{margin:0 0 8px;font-size:13px;line-height:1.55}
+  .sample .s-tags{font-family:var(--mono);font-size:10px;letter-spacing:.06em;margin:0;overflow-wrap:anywhere}
+
+  /* ---------- questions ---------- */
+  .q{border:1px solid var(--n800);border-radius:11px;background:var(--n900);padding:20px;margin-bottom:14px}
+  .q h4{margin:0 0 8px;font-size:15px;color:var(--n100);font-weight:600}
+  .q p{margin:0 0 12px;font-size:14px;color:var(--n400);max-width:80ch}
+  .q code{font-family:var(--mono);font-size:12.5px;color:var(--amber);background:rgba(251,191,36,.08);padding:1px 5px;border-radius:4px}
+  form.pick{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin:0}
+  form.pick label{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--n300);cursor:pointer}
+  form.pick input{accent-color:var(--amber);width:15px;height:15px;cursor:pointer}
+  form.pick button{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    background:var(--amber);color:#1c1917;border:0;border-radius:7px;padding:9px 15px;cursor:pointer;font-weight:600}
+  form.pick button:hover{background:#fcd34d}
+
+  footer.doc{padding:40px 0 70px;color:var(--n600);font-size:13px;font-family:var(--mono)}
+
+  @media (max-width:820px){
+    .b-shell{grid-template-columns:minmax(0,1fr)}
+    .b-rail{position:static;border-right:0;border-bottom:1px solid var(--n800);padding:24px 22px}
+    .b-content{padding:24px 22px 40px}
+    .job .top .when{margin-left:0;flex-basis:100%}
+    .m h1{font-size:25px}
+  }
+</style>
+</head>
+<body>
+
+<header class="doc-head">
+  <div class="wrap">
+    <p class="label">Portfolio · revision 2</p>
+    <h1>Option B, with the copy rewritten from your own notes.</h1>
+    <p>You picked the sticky rail, so Option A is gone. I read through your Obsidian vault: your personal essay drafts, the Portfolio project notes, and your 2026 goals. The copy below is rewritten against what those say about you, not against what the current components say.</p>
+    <p>You also asked about the color scheme. My answer is in <a href="#color" style="color:var(--amber)">the palette section</a>, with three options you can pick from.</p>
+    <div class="note">
+      <p><b>Volunteering stays.</b> You said it should always be there, so I dropped the earlier idea of folding it into Now. It is a full section (block 08) with the complete descriptions, and it now has its own entry in the rail nav, which fixes the bug where nothing linked to it.</p>
+      <p><b>What I did not do:</b> touch anything in <span class="mono">src/</span>. This is still a mockup. Nothing ships until you say which palette.</p>
+      <p><b>One number I deliberately did not use:</b> your essays say NoTraffic deploys across "400+ U.S. agencies." That is the company's reach, not yours, and on a personal site it reads as borrowed credit. I kept your own numbers: 72+ intersections, six cities, 25% delay reduction.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ THE COPY ============================ -->
+<section class="block">
+  <div class="wrap">
+    <h2>The description, rewritten</h2>
+    <p class="sub">The current copy sells you as a traffic engineer who uses AI. Your own writing sells something sharper and more portable: someone who works at the seam where AI meets physical infrastructure, and who builds things nobody asked for. That second version is the one worth leading with.</p>
+
+    <div class="diff">
+      <div class="old">
+        <h4>Now · hero</h4>
+        <p>"I put AI traffic management systems on real streets: 72+ intersections across the US and Canada, from simulation to go-live to measured results."</p>
+        <p class="why">Accurate, but it boxes you into traffic. It also leads with a category instead of a claim, and it says nothing about the thing that actually differentiates you.</p>
+      </div>
+      <div class="new">
+        <h4>Proposed · hero</h4>
+        <p style="font-size:17px;color:var(--n50);font-weight:600;line-height:1.35">I work at the seam where AI meets physical infrastructure.</p>
+        <p>I put AI control systems into traffic signals: 72+ signalized intersections across six cities in the US and Canada, from simulation to go-live to measured results. I work directly with the R&amp;D team on product features, enhancements, and algorithm tuning.</p>
+        <p class="why">Claim first, evidence second. "Physical infrastructure" carries traffic and everything after it, so the copy is not boxed into signals forever.</p>
+      </div>
+    </div>
+
+    <div class="diff" style="margin-top:16px">
+      <div class="old">
+        <h4>Now · about, four paragraphs</h4>
+        <p>Opens with the NoTraffic role, then a paragraph of process detail, then a job-history recap, then a tooling paragraph. Experience restates all of it two sections later.</p>
+        <p class="why">Three of the four paragraphs are duplicated downstream. Nothing in here explains why you build things on nights and weekends, which is the most interesting fact about you.</p>
+      </div>
+      <div class="new">
+        <h4>Proposed · about, two paragraphs</h4>
+        <p>Paragraph 1 keeps the role and defines the seam. Paragraph 2 keeps only the process detail Experience does not repeat. Everything else is cut, including the job-history recap that Experience already covers.</p>
+        <p class="why">Half the length, no duplication. The projects speak for themselves in block 05 rather than being introduced twice. Full text is in the mockup below.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:44px">What I pulled from the vault</h2>
+    <p class="sub">Every line of new copy traces back to something you already wrote. Flag anything you would rather keep off a public site.</p>
+    <div class="srcs">
+      <div><p class="f">Your direction</p><p>The R&amp;D relationship stated plainly: product features, enhancements, algorithm tuning. Now the hero closer.</p></div>
+      <div><p class="f">Personal essays</p><p>"Each of those choices was optional. I made them anyway." Becomes the framing for the Projects intro.</p></div>
+      <div><p class="f">Personal essays</p><p>Physical AI as the framing: AI perception and control meeting legacy infrastructure. Now the hero claim.</p></div>
+      <div><p class="f">Your direction</p><p>Curitiba to Rio to Maine at seven, Atlanta in 2012, film camera plus the Fujifilm X-T50, Vai Corinthians. Folded into your existing paragraph rather than replacing it.</p></div>
+      <div><p class="f">Projects/Portfolio/Memory.md</p><p>No em dashes, no standalone hyphens, curate rather than accumulate. Followed throughout.</p></div>
+      <div><p class="f">Goals for remaining 2026.md</p><p>The Indianapolis marathon. Nothing from this file is on the site, it just confirmed the running detail is current.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ OPTION B MOCK ============================ -->
+<section class="block">
+  <div class="wrap">
+    <h2>Option B, built out</h2>
+    <p class="sub">Sticky identity rail on the left, content on the right, no top nav bar. Region IDs are on every block. Shown in your current palette so the copy is the only thing that changed since last time.</p>
+
+    <div class="frame">
+      <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span>Option B · scroll inside this frame</span></div>
+      <div class="frame-body m">
+        <div class="b-shell">
+
+          <aside class="b-rail">
+            <span class="rid">01 Identity rail</span>
+            <div class="avatar" style="margin-top:14px"></div>
+            <p class="nm">Lucas Ferreira, PE</p>
+            <p class="rl">Signal Optimization Engineer<br>NoTraffic</p>
+            <p class="lc">Atlanta, GA<br>Licensed PE · Georgia · #PE054784</p>
+            <ul class="b-railnav">
+              <li class="on">About</li><li>Experience</li><li>Projects</li>
+              <li>Skills</li><li>Volunteering</li><li>Now</li><li>Contact</li>
+            </ul>
+            <div class="links" style="flex-direction:column;gap:7px">
+              <span>GitHub &#8599;</span><span>LinkedIn &#8599;</span><span>Substack &#8599;</span>
+              <span>Resume &#8599;</span><span class="acc">lvcaspf@gmail.com</span>
+            </div>
+          </aside>
+
+          <div class="b-content">
+
+            <div class="sec">
+              <span class="rid">02 Statement</span>
+              <h1 style="margin-top:14px">I work at the seam where AI meets physical infrastructure.</h1>
+              <p class="lead" style="max-width:60ch">I put AI control systems into traffic signals: 72+ signalized intersections across six cities in the US and Canada, from simulation to go-live to measured results. I work directly with the R&amp;D team on product features, enhancements, and algorithm tuning.</p>
+              <div class="stat-row">
+                <div><div class="v">72+</div><div class="k">Intersections managed</div></div>
+                <div><div class="v">6</div><div class="k">Cities deployed</div></div>
+                <div><div class="v">25%</div><div class="k">Corridor delay cut</div></div>
+                <div><div class="v">12h&rarr;1h</div><div class="k">ESG reporting cycle</div></div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <span class="rid">03 About</span>
+              <p class="mlabel" style="margin-top:12px">About</p>
+              <p class="lead">I am a Signal Optimization Engineer at <span style="color:var(--n100);font-weight:500">NoTraffic</span>, a Series C AI mobility startup. My job is the hard part of physical AI: taking a control algorithm that works in a model and making it survive contact with real hardware, real agencies, and real streets.</p>
+              <p>That means running stakeholder workshops to turn operational complaints into measurable objectives, building SUMO microsimulation models to de-risk adoption before anything touches the field, tuning the optimization algorithm at the control unit, and delivering the before and after numbers that prove it worked. I also work directly with the R&amp;D team on product features, enhancements, and algorithm tuning, translating what the field actually needs into changes that ship.</p>
+              <p class="meta" style="margin-top:14px">Georgia Institute of Technology · B.S. Civil Engineering · 2018&ndash;2021</p>
+            </div>
+
+            <div class="sec">
+              <span class="rid">04 Experience</span>
+              <p class="mlabel" style="margin-top:12px">Experience</p>
+
+              <div class="job">
+                <div class="top"><h3>NoTraffic</h3><span class="role">Signal Optimization Engineer</span><span class="when">Nov 2024 &ndash; Present</span></div>
+                <ul class="b">
+                  <li>Own the full deployment lifecycle for AI-driven adaptive signal control across six municipalities (Phoenix, Topeka, Missouri City, West Allis, Naples, Montreal): from stakeholder requirements gathering through simulation-based validation to go-live and post-launch tuning.</li>
+                  <li>Configure and tune AI traffic signal control models across national corridors, using live performance data to iteratively adjust algorithm parameters, reducing intersection delay by up to 30% and travel time by 10%.</li>
+                  <li>Act as the forward-deployed technical lead between R&amp;D and U.S. customers, translating field constraints and agency requirements into product and algorithm changes that ship.</li>
+                  <li>Manage and maintain 72+ signalized intersections nationwide, monitoring model performance, troubleshooting algorithm behavior, and training agency staff.</li>
+                  <li>Architected custom Model Context Protocol (MCP) server endpoints to securely bridge LLMs with private BI databases, fully automating ESG report generation and cutting a 12-hour manual process to under 1 hour.</li>
+                </ul>
+                <p class="tags">SUMO Microsimulation · AI Implementation · Bash Scripts · Python · Project Delivery · AI Agents · MCP</p>
+              </div>
+
+              <div class="job">
+                <div class="top"><h3>Q-Free ASA</h3><span class="role">Support Engineer</span><span class="when">Nov 2021 &ndash; Nov 2024</span></div>
+                <ul class="b">
+                  <li>Led product evaluation and system design for the Q-Free Urban traffic management platform supporting statewide deployments for Georgia DOT and North Carolina DOT.</li>
+                  <li>Directed User Acceptance Testing for major deployments: City of Laval, City of Dallas TX, and North Carolina DOT.</li>
+                  <li>Served as engineering lead for adaptive traffic control deployments in Boulder, CO and Conway, AR.</li>
+                </ul>
+                <p class="tags">Sales Engineering · UAT · Customer Support · Azure Cloud Deployment · PostgreSQL</p>
+              </div>
+
+              <p class="meta" style="margin-top:6px;color:var(--n600)">Earlier: Kimley-Horn, Civil Engineering Analyst (2021) · HNTB, Traffic Engineering Intern (2019&ndash;2020)</p>
+            </div>
+
+            <div class="sec">
+              <span class="rid">05 Projects</span>
+              <p class="mlabel" style="margin-top:12px">Projects</p>
+              <p class="lead" style="max-width:60ch;margin-bottom:20px">Nobody asked for any of these. That is the point.</p>
+
+              <div class="pcard">
+                <div class="pmedia">atms-demo.mp4</div>
+                <div class="ptop">
+                  <span class="cat">Traffic Signal Management System</span>
+                  <span><span class="act">&#9654; Live demo</span> &nbsp; <span class="act gh">GitHub &#8599;</span></span>
+                </div>
+                <h3 style="font-size:16px;margin-bottom:8px">ATMS-lite: Live Traffic Signal Dashboard</h3>
+                <p>A live dashboard wired to a real traffic signal controller on my desk. It streams live signal status, lets an operator send safe commands back to the hardware, and generates ATSPM-style performance reports. Built because I wanted to see why a deployment failed instead of guessing.</p>
+                <ul class="b">
+                  <li>Streams live signal, walk, and call status over SNMP at ~5 Hz, with automatic recovery if the controller drops offline</li>
+                  <li>Sends commands back to the hardware with guardrails against unsafe signal states</li>
+                  <li>Captures signal events into Postgres and computes ATSPM-style reports natively</li>
+                  <li>Renders a corridor time-space diagram and a satellite overlay color-coded to the live signal</li>
+                </ul>
+                <p class="tags">Full-Stack Engineering · Real-Time Systems · Hardware Integration · React · Python · Postgres · ATSPM · Live Dashboards · Docker</p>
+              </div>
+
+              <div class="grid2">
+                <div class="pcard" style="margin:0">
+                  <div class="ptop"><span class="cat">Traffic Simulation</span><span class="act gh">GitHub &#8599;</span></div>
+                  <h3 style="font-size:15px;margin-bottom:8px">Corridor Simulation Web App</h3>
+                  <p>Ingests turning movement counts, geometry, and NTCIP controller databases to run a multi-intersection simulation using HCM 7th Edition Chapter 19 methodology. Written from scratch, parser included, to check our field recommendations against the actual math.</p>
+                  <p class="tags">NTCIP · HCM 7th Edition · React · Python · FastAPI · SQLite</p>
+                </div>
+                <div class="pcard" style="margin:0">
+                  <div class="ptop"><span class="cat">AI Hardware / Voice</span><span class="act gh">GitHub &#8599;</span></div>
+                  <h3 style="font-size:15px;margin-bottom:8px">Lulu: AI Desk Companion</h3>
+                  <p>A physical desk companion on an ESP32-S3 talking to a Mac backend over WiFi. Full voice pipeline, a two-model local LLM setup, and a pixel-art face across six expressions. Everything runs locally, no cloud APIs. Built to prove I could go from silicon to product alone.</p>
+                  <p class="tags">ESP32-S3 · Python · FastAPI · WebSockets · Ollama · Local LLMs · faster-whisper · Piper TTS</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <span class="rid">06 Skills</span>
+              <p class="mlabel" style="margin-top:12px">Skills</p>
+              <div class="grid2">
+                <div><h3 style="margin-bottom:5px">Transportation Systems</h3><p class="tags">Adaptive Signal Control · NTCIP · Signal Controllers · EOS Cobalt · ATSPM Analytics · SUMO · ITS Design</p></div>
+                <div><h3 style="margin-bottom:5px">AI &amp; Agentic Engineering</h3><p class="tags">Claude Code · MCP Server Development · Agent Skill Design · Multi-Agent Workflows · Local LLMs (Ollama)</p></div>
+                <div><h3 style="margin-bottom:5px">Software Engineering</h3><p class="tags">Python · JavaScript · React · FastAPI · REST APIs · WebSockets · PostgreSQL · Bash</p></div>
+                <div><h3 style="margin-bottom:5px">Hardware &amp; Embedded</h3><p class="tags">ESP32 / Arduino / RPi5 · SNMP Hardware Polling · I2S Audio · AutoCAD / Civil 3D</p></div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <span class="rid">07 Off the clock</span>
+              <p class="mlabel" style="margin-top:12px">Off the clock</p>
+              <p>Brazilian by birth: born in Curitiba, grew up in Rio de Janeiro, moved to America at seven and was raised in Maine, without a word of English at first. Atlanta has been home since 2012. Trilingual and a dual citizen. Vai Corinthians.</p>
+              <p>I'm a maker at heart: I like hardware projects and there's usually a microcontroller and a soldering iron on my desk. Outside of that I run, play soccer and chess, sketch, and usually have a film camera and my Fujifilm X-T50 on me anywhere worth the trip. The overlap between creative and analytical thinking is what pulled me into engineering, and it still keeps me sharp.</p>
+            </div>
+
+            <div class="sec">
+              <span class="rid">08 Volunteering</span>
+              <p class="mlabel" style="margin-top:12px">Volunteering</p>
+              <h2>Outside the day job.</h2>
+              <div class="grid2">
+                <div>
+                  <h3 style="margin-bottom:4px">Society of St. Vincent de Paul</h3>
+                  <p class="tags" style="color:var(--amber);margin-bottom:2px">Caseworker</p>
+                  <p class="meta" style="margin-bottom:8px">St. Jude's Parish · Atlanta, GA</p>
+                  <p>Evaluate and assist families and individuals in need through St. Jude's Parish. Conduct case assessments, connect clients with resources, and provide direct support to community members facing hardship.</p>
+                </div>
+                <div>
+                  <h3 style="margin-bottom:4px">Beta Iota Alumni Board · Georgia Tech ATO</h3>
+                  <p class="tags" style="color:var(--amber);margin-bottom:2px">Alumni Board President</p>
+                  <p class="meta" style="margin-bottom:8px">Alpha Tau Omega · Georgia Tech</p>
+                  <p>Promoted from treasurer to president of the non-profit alumni board. I manage the endowment, advise active chapter leadership, and administer scholarships on behalf of the ATO Foundation. I transferred into Georgia Tech, so giving back to the people who opened that door matters to me.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <span class="rid">09 Now</span>
+              <p class="mlabel" style="margin-top:12px">Now</p>
+              <div class="grid2">
+                <div><h3 style="margin-bottom:5px">Listening to</h3><p class="tags">Deadbeat by Tame Impala &#8599; · Dwarkesh Podcast &#8599;</p></div>
+                <div><h3 style="margin-bottom:5px">Tinkering with</h3><p class="tags">Raspberry Pi pool monitor &#8599; · lulu-ai &#8599; · CAD for 3D printing</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COLOR ============================ -->
+<section class="block" id="color">
+  <div class="wrap">
+    <h2>The color scheme, since you asked</h2>
+    <p class="sub">Near-black plus amber-400 plus uppercase mono labels is the default developer-portfolio palette. It is competent and it will never embarrass you, but it is also what a few thousand other sites look like, and it says nothing about you. You are a licensed PE and a hardware builder who ships real systems. Here are three positions, with the same slice of your site rendered in each.</p>
+
+    <!-- palette 1 -->
+    <div class="pal">
+      <div class="pal-head">
+        <h3>1 · Keep it</h3>
+        <span class="pill">Current</span>
+        <p>Amber on near-black. No risk, no signature. If the site is mostly for recruiters who will skim it in 30 seconds, this is genuinely fine.</p>
+      </div>
+      <div class="swatches">
+        <i style="background:#0a0a0a"></i><i style="background:#171717"></i><i style="background:#404040"></i>
+        <i style="background:#a3a3a3"></i><i style="background:#fafafa"></i><i style="background:#fbbf24"></i>
+      </div>
+      <div class="sample" style="background:#0a0a0a">
+        <p class="s-lab" style="color:#fbbf24">Signal Optimization Engineer · NoTraffic</p>
+        <p class="s-nm" style="color:#fafafa">Lucas Ferreira, PE</p>
+        <p class="s-rl" style="color:#737373">Atlanta, GA · Licensed PE · #PE054784</p>
+        <p class="s-p" style="color:#d4d4d4">I work at the seam where AI meets physical infrastructure. I put AI control systems into traffic signals, from simulation to go-live.</p>
+        <div class="s-stats">
+          <div><div class="s-v" style="color:#fbbf24">72+</div><div class="s-k" style="color:#737373">Intersections</div></div>
+          <div><div class="s-v" style="color:#fbbf24">25%</div><div class="s-k" style="color:#737373">Delay cut</div></div>
+          <div><div class="s-v" style="color:#fbbf24">12h&rarr;1h</div><div class="s-k" style="color:#737373">ESG reporting</div></div>
+        </div>
+        <div class="s-card" style="background:rgba(23,23,23,.5);border-color:#262626">
+          <h5 style="color:#f5f5f5">ATMS-lite: Live Traffic Signal Dashboard</h5>
+          <p style="color:#a3a3a3">A live dashboard wired to a real traffic signal controller on my desk.</p>
+          <p class="s-tags" style="color:#737373">React · Python · Postgres · ATSPM · Docker</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- palette 2 -->
+    <div class="pal">
+      <div class="pal-head">
+        <h3>2 · Warm paper</h3>
+        <span class="pill rec">My recommendation</span>
+        <p>Light, editorial, near-black type on warm off-white with one burnt-orange accent. Reads like a considered document rather than a terminal. It is the option that stands out most in a stack of dark portfolios, and it flatters long-form copy, which you now have a lot of.</p>
+      </div>
+      <div class="swatches">
+        <i style="background:#faf8f5"></i><i style="background:#f2eee7"></i><i style="background:#e2dbd0"></i>
+        <i style="background:#8a8177"></i><i style="background:#1c1917"></i><i style="background:#b45309"></i>
+      </div>
+      <div class="sample" style="background:#faf8f5">
+        <p class="s-lab" style="color:#b45309">Signal Optimization Engineer · NoTraffic</p>
+        <p class="s-nm" style="color:#1c1917">Lucas Ferreira, PE</p>
+        <p class="s-rl" style="color:#8a8177">Atlanta, GA · Licensed PE · #PE054784</p>
+        <p class="s-p" style="color:#3f3a35">I work at the seam where AI meets physical infrastructure. I put AI control systems into traffic signals, from simulation to go-live.</p>
+        <div class="s-stats">
+          <div><div class="s-v" style="color:#b45309">72+</div><div class="s-k" style="color:#8a8177">Intersections</div></div>
+          <div><div class="s-v" style="color:#b45309">25%</div><div class="s-k" style="color:#8a8177">Delay cut</div></div>
+          <div><div class="s-v" style="color:#b45309">12h&rarr;1h</div><div class="s-k" style="color:#8a8177">ESG reporting</div></div>
+        </div>
+        <div class="s-card" style="background:#f2eee7;border-color:#e2dbd0">
+          <h5 style="color:#1c1917">ATMS-lite: Live Traffic Signal Dashboard</h5>
+          <p style="color:#57504a">A live dashboard wired to a real traffic signal controller on my desk.</p>
+          <p class="s-tags" style="color:#8a8177">React · Python · Postgres · ATSPM · Docker</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- palette 3 -->
+    <div class="pal">
+      <div class="pal-head">
+        <h3>3 · Warm black, monochrome</h3>
+        <span class="pill">Stays dark</span>
+        <p>Still dark, but the ground goes warm instead of pure neutral, and the amber stops being decoration. Headings and emphasis carry in near-white; amber appears only where something is genuinely live, like the now-playing dot and the current-role marker. Restraint is the signature.</p>
+      </div>
+      <div class="swatches">
+        <i style="background:#100e0c"></i><i style="background:#1a1714"></i><i style="background:#38322c"></i>
+        <i style="background:#a09890"></i><i style="background:#f7f4f0"></i><i style="background:#fbbf24"></i>
+      </div>
+      <div class="sample" style="background:#100e0c">
+        <p class="s-lab" style="color:#a09890">Signal Optimization Engineer · NoTraffic</p>
+        <p class="s-nm" style="color:#f7f4f0">Lucas Ferreira, PE</p>
+        <p class="s-rl" style="color:#6d655d">Atlanta, GA · Licensed PE · #PE054784</p>
+        <p class="s-p" style="color:#d6cec6">I work at the seam where AI meets physical infrastructure. I put AI control systems into traffic signals, from simulation to go-live.</p>
+        <div class="s-stats">
+          <div><div class="s-v" style="color:#f7f4f0">72+</div><div class="s-k" style="color:#6d655d">Intersections</div></div>
+          <div><div class="s-v" style="color:#f7f4f0">25%</div><div class="s-k" style="color:#6d655d">Delay cut</div></div>
+          <div><div class="s-v" style="color:#f7f4f0">12h&rarr;1h</div><div class="s-k" style="color:#6d655d">ESG reporting</div></div>
+        </div>
+        <div class="s-card" style="background:#1a1714;border-color:#2b2622">
+          <h5 style="color:#f7f4f0">ATMS-lite: Live Traffic Signal Dashboard</h5>
+          <p style="color:#a09890">A live dashboard wired to a real traffic signal controller on my desk.</p>
+          <p class="s-tags" style="color:#6d655d">React · Python · Postgres · ATSPM · Docker</p>
+          <p class="s-tags" style="color:#fbbf24;margin-top:8px">&#9679; Live now</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tradeoff">
+      <div><h4 class="win">Why warm paper</h4><ul>
+        <li>Instantly differentiated. Dark plus amber is the crowd</li>
+        <li>Long copy is easier to read, and you just added a lot of it</li>
+        <li>Reads considered rather than default, which matches a licensed engineer who builds hardware better than terminal aesthetics</li>
+      </ul></div>
+      <div><h4 class="cost">Why you might not</h4><ul>
+        <li>Screenshots of dark dashboards (ATMS-lite, Lulu) sit awkwardly on light ground and need framing</li>
+        <li>Every color value in the codebase changes, not just the accent</li>
+        <li>If you personally prefer dark, option 3 gets you most of the differentiation for a fraction of the work</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DECISIONS ============================ -->
+<section class="block">
+  <div class="wrap">
+    <h2>What I need from you</h2>
+    <p class="sub">Pick below, or annotate any block directly. Region IDs are on every section of the mockup.</p>
+
+    <div class="q">
+      <h4>1. Which palette?</h4>
+      <p>This is the only thing blocking implementation. Layout and copy are settled unless you say otherwise.</p>
+      <form class="pick" data-lavish-question="palette" onsubmit="event.preventDefault(); const c=new FormData(event.currentTarget).get('pal'); if(c) window.lavish.queuePrompt('Build Option B using palette: '+c, {tag:'choice', text:'Palette: '+c, element:event.currentTarget, data:{question:'palette', answer:c}});">
+        <label><input type="radio" name="pal" value="1 - keep the current amber on near-black"> 1 · Keep it</label>
+        <label><input type="radio" name="pal" value="2 - warm paper, light editorial"> 2 · Warm paper</label>
+        <label><input type="radio" name="pal" value="3 - warm black monochrome, amber only for live state"> 3 · Warm black</label>
+        <label><input type="radio" name="pal" value="something else, show me more directions"> Show me more</label>
+        <button type="submit">Queue answer</button>
+      </form>
+    </div>
+
+    <div class="q">
+      <h4>2. How personal do you want block 07?</h4>
+      <p>Block 07 keeps your original paragraph and folds in the Curitiba to Rio to Maine origin, the cameras, and Corinthians. It is the most human writing on the page. It is also personal detail on a public page tied to your real name, so tell me if any of it should come out.</p>
+      <form class="pick" data-lavish-question="personal" onsubmit="event.preventDefault(); const c=new FormData(event.currentTarget).get('per'); if(c) window.lavish.queuePrompt('On the personal block: '+c, {tag:'choice', text:'Personal: '+c, element:event.currentTarget, data:{question:'personal', answer:c}});">
+        <label><input type="radio" name="per" value="keep it as written in block 07"> Keep as written</label>
+        <label><input type="radio" name="per" value="keep the immigration story, drop the hobbies and Corinthians line"> Just the origin</label>
+        <label><input type="radio" name="per" value="revert to the shorter original Off the clock paragraph"> Back to original</label>
+        <button type="submit">Queue answer</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="doc">
+  <div class="wrap">Mockup only. No files in <span style="color:var(--n500)">src/</span> were modified. Copy sourced from your Obsidian vault.</div>
+</footer>
+
+</body>
+</html>
