@@ -16,7 +16,7 @@ const groups = [
         title: 'The Dark Cloud by Johnny Blue Skies',
         href: 'https://open.spotify.com/search/Johnny%20Blue%20Skies%20The%20Dark%20Cloud',
       },
-      { title: 'Dwarkesh Podcast', href: 'https://www.dwarkesh.com' },
+      { title: 'Founders Podcast', href: 'https://www.founderspodcast.com' },
     ],
   },
   {
@@ -34,11 +34,11 @@ const groups = [
     ],
   },
   {
-    category: 'Rabbit holes',
+    category: 'Reading',
     items: [
       {
-        title: 'The Evangelion ending',
-        href: 'https://en.wikipedia.org/wiki/The_End_of_Evangelion',
+        title: 'Dungeon Crawler Carl: The Dungeon Anarchist\'s Cookbook',
+        href: 'https://en.wikipedia.org/wiki/Dungeon_Crawler_Carl',
       },
     ],
   },
