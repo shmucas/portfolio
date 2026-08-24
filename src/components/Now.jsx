@@ -6,7 +6,6 @@ const groups = [
     category: 'Tinkering with',
     items: [
       { title: 'Raspberry Pi pool monitor', href: 'https://github.com/shmucas/Pool-Sensor' },
-      { title: 'lulu-ai', href: 'https://github.com/shmucas/lulu.ai-desk-companion' },
       { title: 'CAD for 3D printing' },
     ],
   },
@@ -14,8 +13,8 @@ const groups = [
     category: 'Listening to',
     items: [
       {
-        title: 'Deadbeat by Tame Impala',
-        href: 'https://en.wikipedia.org/wiki/Deadbeat_(Tame_Impala_album)',
+        title: 'The Dark Cloud by Johnny Blue Skies',
+        href: 'https://open.spotify.com/search/Johnny%20Blue%20Skies%20The%20Dark%20Cloud',
       },
       { title: 'Dwarkesh Podcast', href: 'https://www.dwarkesh.com' },
     ],
@@ -24,13 +23,14 @@ const groups = [
     category: 'Playing',
     items: [
       {
-        title: 'Mina the Hollower',
-        href: 'https://www.yachtclubgames.com/games/mina-the-hollower',
+        title: 'Persona 5 Royal',
+        href: 'https://en.wikipedia.org/wiki/Persona_5_Royal',
       },
       {
-        title: 'Blasphemous',
-        href: 'https://en.wikipedia.org/wiki/Blasphemous_(video_game)',
+        title: 'Blasphemous 2',
+        href: 'https://en.wikipedia.org/wiki/Blasphemous_2',
       },
+      { title: 'Pokémon Unbound', href: 'https://www.pokecommunity.com/threads/pokemon-unbound.382178/' },
     ],
   },
   {
