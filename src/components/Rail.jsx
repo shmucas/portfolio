@@ -13,6 +13,7 @@ const sections = [
 const links = [
   { label: 'GitHub', href: 'https://github.com/shmucas', external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lucas-ferreira-pe-b6631a142/', external: true },
+  { label: 'Strava', href: 'https://strava.com/athletes/94990552', external: true },
   { label: 'Substack', href: 'https://substack.com/@thisislucasferreira', external: true },
   { label: 'Resume', href: '/Lucas-Ferreira-Resume.pdf', external: true },
   { label: 'lvcaspf@gmail.com', href: 'mailto:lvcaspf@gmail.com' },
