@@ -53,6 +53,21 @@ const projects = [
     tags: ['ESP32-S3', 'Python', 'FastAPI', 'WebSockets', 'Ollama', 'Local LLMs', 'faster-whisper', 'Piper TTS', 'Arduino/PlatformIO'],
     github: 'https://github.com/shmucas/lulu.ai-desk-companion',
   },
+  {
+    id: 'ffb26',
+    label: 'Autonomous Agents / Simulation',
+    title: 'Hermes: Fantasy Football Agent',
+    description:
+      'An agent that runs my fantasy football teams on Sleeper. It drafts live, hunts for trades, fixes my lineup, and reports back on its own. Built because I grew up in Brazil on the other kind of football, so I would rather let a model make the roster calls than guess.',
+    details: [
+      'Builds its own player projections from live draft data and past seasons, then simulates a full season of head to head games to see how many wins a roster gets, not just how many points it scores. Trades, lineups, and draft picks all run on one value model: what a player is worth over the next guy available at his position',
+      'Drafts live and unattended, tracking the snake order and picking on that same value model with rules that keep the roster legal',
+      "Sleeper's public API only reads, so I worked out the private endpoint its own web app uses to make picks and set lineups. Every write is behind an explicit flag, since this plays in a league with real people in it",
+      'Lives in my Discord server, so I can talk to Hermes there and get its daily read on trades and start/sit calls without opening anything',
+    ],
+    tags: ['Agentic Workflows', 'Autonomous Agents', 'Monte Carlo Simulation', 'Python', 'FastAPI', 'React', 'Postgres'],
+    github: 'https://github.com/shmucas/fantasy-football-2026',
+  },
 ]
 
 function ProjectCard({ project, onDemo }) {
